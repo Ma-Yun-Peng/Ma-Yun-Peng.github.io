@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java | 马云鹏</title>
+  <title>JDK、JRE、JVM的区别及JavaSE、JavaEE和JavaME的区别？ | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Java">
+  <meta name="description" content="1、JRE（Java Runtime Environment java运行环境）包括JAVA虚拟机和JAVA程序所需的核心类库，如果想要运行一个开发好的JAVA程序，计算机中只要安装JRE即可">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;13&#x2F;Java&#x2F;pageJava&#x2F;index.html">
+<meta property="og:title" content="JDK、JRE、JVM的区别及JavaSE、JavaEE和JavaME的区别？">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;13&#x2F;Java&#x2F;JDK%E3%80%81JRE%E3%80%81JVM%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8AJavaSE%E3%80%81JavaEE%E5%92%8CJavaME%E7%9A%84%E5%8C%BA%E5%88%AB&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
+<meta property="og:description" content="1、JRE（Java Runtime Environment java运行环境）包括JAVA虚拟机和JAVA程序所需的核心类库，如果想要运行一个开发好的JAVA程序，计算机中只要安装JRE即可">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T13:09:16.982Z">
+<meta property="og:updated_time" content="2019-11-21T11:57:25.549Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -165,19 +167,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java/pageJava" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java/JDK、JRE、JVM的区别及JavaSE、JavaEE和JavaME的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java
+      JDK、JRE、JVM的区别及JavaSE、JavaEE和JavaME的区别？
     </h1>
   
 
         
-        <a href="/2019/11/13/Java/pageJava/" class="archive-article-date">
+        <a href="/2019/11/13/Java/JDK%E3%80%81JRE%E3%80%81JVM%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8AJavaSE%E3%80%81JavaEE%E5%92%8CJavaME%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
   	<time datetime="2019-11-13T13:04:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
 </a>
         
@@ -185,7 +187,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>1、<strong>JRE</strong>（Java Runtime Environment java运行环境）<br>包括JAVA虚拟机和JAVA程序所需的核心类库，如果想要运行一个开发好的JAVA程序，计算机中只要安装JRE即可 </p>
+<a id="more"></a>
+
+<p>2、<strong>JDK</strong>（Java Development toolKit java开发工具包）<br>JDK是提供给JAVA开发人员使用的，其中包含了JAVA的开发工具，也包括了JRE。所以安装了JDK，就不用再单独安装JRE了 </p>
+<p>3、<strong>JVM</strong>(java Virtual Machine Java虚拟机)<br>Java号称是一次编写，到处运行。也就是说，Java程序可以实现跨平台，在Windows上写好的Java程序，可以运行在Linux或者其它平台上面，而不用修改源代码。而C或者C++就不行了，他是跟平台相关的。Java只所以能够跨平台，是因为Java程序不是直接运行在操作系统上的，而是运行在JVM上的。而JVM根据不同的操作系统，有不同的版本，比如有Linux版本的，Windows版本的等。我们在安装JRE或者JDK的时候，需要根据操作系统来下载不同的版本，而JDK和JRE里面已经包括了JVM，上面也说过了。所以，Java程序才能够实现跨平台！</p>
+<h3 id="JAVA语言的三种结构"><a href="#JAVA语言的三种结构" class="headerlink" title="JAVA语言的三种结构"></a>JAVA语言的三种结构</h3><p>1、<strong>J2EE</strong>(Java 2 Platform Enterprise Edition)企业版 javaee<br>是为开发企业环境下的应用程序提供的一套解决方案。 该技术体系中包含的技术如 Servlet Jsp等，主要针对于Web应用程序开发。可以使用一些现有的框架来快速的做企业网站的开始，比如SSH框架 </p>
+<p>2、<strong>J2SE</strong>（Java 2 Platform Standard Edition）标准版javase<br>是为开发普通桌面和商务应用程序提供的解决方案。 该技术体系是其他两者的基础，可以完成一些桌面应用程序的开发。 比如Java版的扫雷。它是学习J2EE或J2ME的基础，主要包括了Java的基本语法规范，面向对象等内容。</p>
+<p>3、<strong>J2ME</strong>(Java 2 Platform Micro Edition)小型版<br>是为开发电子消费产品和嵌入式设备提供的解决方案。 该技术体系主要应用于小型电子消费类产品，如手机中的应用程序等。 </p>
+<p>Java5.0版本后，更名为<strong>JAVAEE JAVASE JAVAME</strong></p>
+
       
 
       
@@ -285,7 +296,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/13/Java/pageJava/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/13/Java/JDK%E3%80%81JRE%E3%80%81JVM%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8AJavaSE%E3%80%81JavaEE%E5%92%8CJavaME%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -337,7 +348,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA语言的三种结构"><span class="toc-number">1.</span> <span class="toc-text">JAVA语言的三种结构</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -449,15 +460,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-思考</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-思考</a>
               </li>
              
               <li class="article-tag-list-item">
