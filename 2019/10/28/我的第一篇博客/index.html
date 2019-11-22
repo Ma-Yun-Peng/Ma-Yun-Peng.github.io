@@ -388,24 +388,38 @@
   
 
   
-  <div id="gitment-ctn"></div> 
 
-<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
-<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/10/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/",
-  owner: 'Ma-Yun-Peng',
-  repo: 'Ma-Yun-Peng.github.io',
-  oauth: {
-    client_id: '7f179dec34fc74618945',
-    client_secret: 'dddbe8523a921e5d3b498fe7dbe4ee9c25ae4770',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
+
+
+
   
+      <section id="comments" class="comments">
+        <style>
+          .comments{margin:30px;padding:10px;background:#fff}
+          @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+        </style>
+        <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  new Valine({
+    av: AV,
+    el: '#vcomment',
+    notify: notify,
+    app_id: "Oqd6gc9UVGAvaHeC1BB6wYwK-gzGzoHsz",
+    app_key: "REMSirCGqs7WW1YbYE8hNMUV",
+    placeholder: "请留下您的想法...",
+    avatar: "mm",
+  });
+</script>
+
+    </section>
+  
+
 
 
           </div>
@@ -506,11 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">-思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-思考</a>
+                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
