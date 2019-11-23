@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>TC/IP参考模型 | 马云鹏</title>
+  <title>封装成帧和透明传输 | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图解">
+  <meta name="description" content="字符计数法帧首部使用一个计数字段（第一个字节，八位）来标明帧内字符数。缺点：鸡蛋装在一个篮子里，一个计数字段发生错误，所有数据都错误。">
 <meta name="keywords" content="-计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TC&#x2F;IP参考模型">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;19&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&#x2F;TC-IP&#x2F;TC-IP&#x2F;index.html">
+<meta property="og:title" content="封装成帧和透明传输">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&#x2F;%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93&#x2F;%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
-<meta property="og:description" content="图解">
+<meta property="og:description" content="字符计数法帧首部使用一个计数字段（第一个字节，八位）来标明帧内字符数。缺点：鸡蛋装在一个篮子里，一个计数字段发生错误，所有数据都错误。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TCP-IP.jpg">
-<meta property="og:updated_time" content="2019-11-23T06:39:04.481Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;%E5%AD%97%E7%AC%A6%E5%A1%AB%E5%85%85%E6%B3%95.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;%E5%AD%97%E7%AC%A6%E5%A1%AB%E5%85%85%E6%B3%952.jpg">
+<meta property="og:updated_time" content="2019-11-23T08:16:23.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TCP-IP.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;%E5%AD%97%E7%AC%A6%E5%A1%AB%E5%85%85%E6%B3%95.jpg">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
   
@@ -169,14 +170,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络/TC-IP/TC-IP" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-计算机网络/封装成帧和透明传输/封装成帧和透明传输" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      TC/IP参考模型
+      封装成帧和透明传输
     </h1>
   
  
@@ -193,36 +194,22 @@
   
   
         
-        <a href="/2019/11/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TC-IP/TC-IP/" class="archive-article-date">
-  	<time datetime="2019-11-19T09:51:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
+        <a href="/2019/11/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93/%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93/" class="archive-article-date">
+  	<time datetime="2019-11-23T07:51:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="/images/TCP-IP.jpg" alt></p>
+        <h3 id="字符计数法"><a href="#字符计数法" class="headerlink" title="字符计数法"></a>字符计数法</h3><p>帧首部使用一个计数字段（第一个字节，八位）来标明帧内字符数。<br>缺点：鸡蛋装在一个篮子里，一个计数字段发生错误，所有数据都错误。</p>
 <a id="more"></a>
-<h2 id="osi参考模型与TCP-IP参考模型不同点"><a href="#osi参考模型与TCP-IP参考模型不同点" class="headerlink" title="osi参考模型与TCP/IP参考模型不同点"></a>osi参考模型与TCP/IP参考模型不同点</h2><table>
-<thead>
-<tr>
-<th>-</th>
-<th align="center">ISO/OSI参考模型</th>
-<th align="right">TCP/IP模型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>网络层</td>
-<td align="center">无连接+面向连接</td>
-<td align="right">无连接</td>
-</tr>
-<tr>
-<td>传输层</td>
-<td align="center">面向连接</td>
-<td align="right">无连接+面向连接</td>
-</tr>
-</tbody></table>
-<p><strong>面向连接</strong>分为三阶段，第一是建立连接，在此阶段，发出一个建立连接的请求。<br>第二阶段：只有在连接成功建立后，才能开始传输数据。<br>第三阶段：当数据传输完毕，必须释放连接。<br><strong>无连接</strong>没有这么多阶段，他直接进行数据传输。</p>
+<h3 id="字符填充法"><a href="#字符填充法" class="headerlink" title="字符填充法"></a>字符填充法</h3><p><img src="/images/%E5%AD%97%E7%AC%A6%E5%A1%AB%E5%85%85%E6%B3%95.jpg" alt></p>
+<p>1.当发送的帧是由文本组成时（文本文件的字符都是从键盘上输入的，都是ASCII码）。<br>不管从键盘上输入什么字符都可以放在帧里传过去，即<strong>透明传输</strong>。<br>2.当传送的帧是由非ASCII码的文本文件组成时（二进制代码的程序或图像等）。<br>就要采用<strong>字符填充方法实现透明传输</strong>。</p>
+<p><img src="/images/%E5%AD%97%E7%AC%A6%E5%A1%AB%E5%85%85%E6%B3%952.jpg" alt></p>
+<h3 id="零比特填充法"><a href="#零比特填充法" class="headerlink" title="零比特填充法"></a>零比特填充法</h3><p>操作：1.在发送端，扫描整个信息字段，只要连续5个1，就立即填入1个0。<br>2.在接收端接收到一个帧时，先找到标志字段确定边界，再用硬件对比特流进行扫描。发现连续5个1时，就把后面的0删除。<br>**保证了透明传输：在传送的比特流中可以传送任意比特组合，而不会引起帧边界的判断错误。</p>
+<h3 id="违规编码法"><a href="#违规编码法" class="headerlink" title="违规编码法"></a>违规编码法</h3><p>由于曼斯特编码 高-低表示1，低-高表示0，那么可以用“高-高”，“低-低”来界定帧的起始和终止。</p>
+<p>由于字节计数法种count字段的脆弱性（其值若有差错讲导致灾难性后果）及字符填充实现上的复杂性和不兼容性，目前较普遍使用的帧同步法是<strong>比特填充</strong>和<strong>违规编码法</strong>。</p>
 
       
 
@@ -323,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TC-IP/TC-IP/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93/%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7%E5%92%8C%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -337,18 +324,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%80%9F%E7%8E%87%E3%80%81%E7%A0%81%E5%85%83%E3%80%81%E5%B8%A6%E5%AE%BD/%E9%80%9F%E7%8E%87%E3%80%81%E7%A0%81%E5%85%83%E3%80%81%E5%B8%A6%E5%AE%BD/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6/%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          速率、码元、带宽
+          差错控制
         
       </div>
     </a>
   
   
-    <a href="/2019/11/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">OSI参考模型</div>
+    <a href="/2019/11/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6/%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">编码与调制</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图解"><span class="toc-number">1.</span> <span class="toc-text">图解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#osi参考模型与TCP-IP参考模型不同点"><span class="toc-number">2.</span> <span class="toc-text">osi参考模型与TCP/IP参考模型不同点</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#字符计数法"><span class="toc-number">1.</span> <span class="toc-text">字符计数法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符填充法"><span class="toc-number">2.</span> <span class="toc-text">字符填充法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#零比特填充法"><span class="toc-number">3.</span> <span class="toc-text">零比特填充法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#违规编码法"><span class="toc-number">4.</span> <span class="toc-text">违规编码法</span></a></li></ol>
                     </div>
                 </span>
             </div>
