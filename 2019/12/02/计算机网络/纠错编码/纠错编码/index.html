@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="马云鹏">
 <meta property="og:description" content="二进制 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010    数据位 1 2 3 4 5 6 7 8 9 10   代码 P1 P2 D1 P3 D2 D3 D4 P4 D5 D6   实际值 0 0 1 0 0 1 1 1 0 1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-02T07:52:39.843Z">
+<meta property="og:updated_time" content="2019-12-02T08:01:20.715Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -254,124 +254,28 @@
 <td align="center">0</td>
 <td align="center">1</td>
 </tr>
-<tr>
-<td align="center"><a id="more"></a></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">&gt;D = 101101</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">1. 将P填入表格中的代码，位置为 2 的 n 次方（1 2 4 8）</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">2. P1 + D1 + D2 + D4 + D5 = 0 (异或运算 同0异1)求出 P1 = 0 ,以此类推求出P2,P3,P4</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">3. 10101的海明码为<strong>0010011101</strong></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">&gt;假设第五位数据出错，因此接收到的数据为0010111101</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">1. 令所有要检验的位进行异或运算</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">2. P1 + D1 + D2 + D4 + D5 = 1  P2 + D1 + D3 + D4 + D6 = 0  P3 + D2 + D3 + D4 = 1  P4 + D5 + D6 = 0</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">&gt;P4 P3 P2 P1 = 0101 = 5  所以第五位数据发生错误</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
 </tbody></table>
+<a id="more"></a>
+
+
+<blockquote>
+<p>D = 101101</p>
+</blockquote>
+<ol>
+<li>将P填入表格中的代码，位置为 2 的 n 次方（1 2 4 8）</li>
+<li>P1 + D1 + D2 + D4 + D5 = 0 (异或运算 同0异1)求出 P1 = 0 ,以此类推求出P2,P3,P4</li>
+<li>10101的海明码为<strong>0010011101</strong><blockquote>
+<p>假设第五位数据出错，因此接收到的数据为0010111101</p>
+</blockquote>
+</li>
+</ol>
+<ol>
+<li>令所有要检验的位进行异或运算</li>
+<li>P1 + D1 + D2 + D4 + D5 = <strong>1</strong><br>P2 + D1 + D3 + D4 + D6 = <strong>0</strong><br>  P3 + D2 + D3 + D4 = <strong>1</strong><br>   P4 + D5 + D6 = <strong>0</strong> <blockquote>
+<p>P4 P3 P2 P1 = 0101 = 5  所以第五位数据发生错误</p>
+</blockquote>
+</li>
+</ol>
 
       
 
@@ -663,7 +567,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,7 +575,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
