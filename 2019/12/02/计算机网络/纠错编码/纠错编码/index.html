@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="马云鹏">
 <meta property="og:description" content="二进制 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010    数据位 1 2 3 4 5 6 7 8 9 10   代码 P1 P2 D1 P3 D2 D3 D4 P4 D5 D6   实际值 0 0 1 0 0 1 1 1 0 1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-02T08:01:20.715Z">
+<meta property="og:updated_time" content="2019-12-04T08:06:33.666Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -257,21 +257,23 @@
 </tbody></table>
 <a id="more"></a>
 
-
 <blockquote>
-<p>D = 101101</p>
+<p>D = 101101<br>确定校验码的位数：海明不等式，2^r &gt;= k+r+1 r为冗余信息位<br>要发送的数据：D = 101101<br>数据的位数 K = 6 带入海明不等式<br>满足不等式的r的最小值为4<br>也就是D = 101101的海明码应该有6+4=10位<br>其中原数据为6位，校验码4位</p>
 </blockquote>
 <ol>
-<li>将P填入表格中的代码，位置为 2 的 n 次方（1 2 4 8）</li>
-<li>P1 + D1 + D2 + D4 + D5 = 0 (异或运算 同0异1)求出 P1 = 0 ,以此类推求出P2,P3,P4</li>
-<li>10101的海明码为<strong>0010011101</strong><blockquote>
+<li><p>将P填入表格中的代码，位置为 2 的 n 次方（1 2 4 8）</p>
+</li>
+<li><p>P1 + D1 + D2 + D4 + D5 = 0 (异或运算 同0异1)求出 P1 = 0 ,以此类推求出P2,P3,P4</p>
+</li>
+<li><p>10101的海明码为<strong>0010011101</strong></p>
+<blockquote>
 <p>假设第五位数据出错，因此接收到的数据为0010111101</p>
 </blockquote>
 </li>
-</ol>
-<ol>
-<li>令所有要检验的位进行异或运算</li>
-<li>P1 + D1 + D2 + D4 + D5 = <strong>1</strong><br>P2 + D1 + D3 + D4 + D6 = <strong>0</strong><br>  P3 + D2 + D3 + D4 = <strong>1</strong><br>   P4 + D5 + D6 = <strong>0</strong> <blockquote>
+<li><p>令所有要检验的位进行异或运算</p>
+</li>
+<li><p>P1 + D1 + D2 + D4 + D5 = <strong>1</strong><br>P2 + D1 + D3 + D4 + D6 = <strong>0</strong><br>  P3 + D2 + D3 + D4 = <strong>1</strong><br>   P4 + D5 + D6 = <strong>0</strong> </p>
+<blockquote>
 <p>P4 P3 P2 P1 = 0101 = 5  所以第五位数据发生错误</p>
 </blockquote>
 </li>
@@ -389,6 +391,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%AD%97%E7%A0%81%E5%88%92%E5%88%86%E5%92%8C%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81/%E5%AD%97%E7%A0%81%E5%88%92%E5%88%86%E5%92%8C%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          字码划分和子网掩码
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6/%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6/" id="article-nav-older" class="article-nav-link-wrap">
@@ -567,11 +578,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">-思考</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-思考</a>
+                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
