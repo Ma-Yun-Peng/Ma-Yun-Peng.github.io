@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>OSI参考模型 | 马云鹏</title>
+  <title>字节输出流 | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图解">
-<meta name="keywords" content="-计算机网络">
+  <meta name="description" content="java.io.OutputStream (字节输出流) 此抽象类是表示输出字节流的所有类的超类。定义了一些子类共性的方法">
+<meta name="keywords" content="-Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OSI参考模型">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;14&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&#x2F;OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B&#x2F;OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B&#x2F;index.html">
+<meta property="og:title" content="字节输出流">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;Java&#x2F;%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81&#x2F;%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
-<meta property="og:description" content="图解">
+<meta property="og:description" content="java.io.OutputStream (字节输出流) 此抽象类是表示输出字节流的所有类的超类。定义了一些子类共性的方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;OSI.jpg">
-<meta property="og:updated_time" content="2019-11-23T06:38:53.688Z">
+<meta property="og:updated_time" content="2019-12-19T09:26:54.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;OSI.jpg">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
   
@@ -169,14 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络/OSI参考模型/OSI参考模型" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java/字节输出流/字节输出流" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      OSI参考模型
+      字节输出流
     </h1>
   
  
@@ -193,67 +191,52 @@
   
   
         
-        <a href="/2019/11/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2019-11-14T07:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-14</time>
+        <a href="/2019/12/19/Java/%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81/%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2019-12-19T08:06:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="/images/OSI.jpg" alt></p>
+        <p>java.io.OutputStream (字节输出流) 此抽象类是表示输出字节流的所有类的超类。<br>定义了一些子类共性的方法</p>
 <a id="more"></a>
 <ul>
-<li><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2></li>
+<li>void close() ：关闭此输出流并释放与此流有关的所有系统资源。 </li>
+<li>void flush()： 刷新此输出流并强制写出所有缓冲的输出字节。 </li>
+<li>void write(byte[] b) ：将 b.length 个字节从指定的 byte 数组写入此输出流。 </li>
+<li>void write(byte[] b, int off, int len) ：将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流。 </li>
+<li>abstract  void write(int b) ：将指定的字节写入此输出流。 </li>
 </ul>
-<p>所有能和用户交互产生网络流量的程序。</p>
-<p>典型的应用层服务：</p>
+<h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>java.io.FileOutputStream extends OutputStream<br>FileOutputStream(文件字节输出流)<br>作用：把内存中的数据写入到硬盘的文件中</p>
+<h5 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h5><ul>
+<li>FileOutputStream(File file) ：创建一个向指定 File 对象表示的文件中写入数据的文件输出流。 </li>
+<li>FileOutputStream(File file, boolean append) ：创建一个向指定 File 对象表示的文件中写入数据的文件输出流。 </li>
+<li>FileOutputStream(FileDescriptor fdObj) ：创建一个向指定文件描述符处写入数据的输出文件流，该文件描述符表示一个到文件系统中的某个实际文件的现有连接。 </li>
+<li>FileOutputStream(String name) ：创建一个向具有指定名称的文件中写入数据的输出文件流。 </li>
+<li>FileOutputStream(String name, boolean append) ：创建一个向具有指定 name 的文件中写入数据的输出文件流。 </li>
+</ul>
+<p><strong>参数：</strong><br>File file：目的地是一个文件<br>String name：目的地是一个路径<br>boolean append: 追加写开关<br>    true：创建对象不会覆盖原文件，继续在文件末尾追加写数据<br>    false：创建一个新文件，覆盖原文件</p>
+<p><strong>作用：</strong></p>
 <ol>
-<li>文件传输（FTP)</li>
-<li>电子邮件（SMTP)</li>
-<li>万维网（HTTP)</li>
+<li>创建一个FileOutputStream对象</li>
+<li>会根据构造方法中传递的文件/文件路径，创建一个空的文件</li>
+<li>会把FileOutputStream对象指向创建好的文件</li>
 </ol>
-<ul>
-<li><h2 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h2></li>
-</ul>
-<p>用于处理两个通信系统中交换信息的表示方式（语法和语义）<br>功能一：数据格式交换 （翻译官）。<br>功能二：数据加密和解密。<br>功能三：数据压缩和恢复。</p>
-<ul>
-<li><h2 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h2></li>
-</ul>
-<p>向表示层实体/用户进程 提供<strong>建立连接</strong>并在连接上<strong>有序</strong>地<strong>传输</strong>数据。这是会话，也是<strong>建立同步</strong>（SYN）</p>
-<p>功能一：建立、管理、终止会话。<br>功能二：使用校验点可使会话在通信失效时从  <strong>校验点/同步点</strong>  继续恢复通信，实现数据同步。适用于传输大文件。</p>
-<blockquote>
-<p>主要协议：ADSP、ASP。</p>
-</blockquote>
-<ul>
-<li><h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2></li>
-</ul>
-<p>负责主机中两个<strong>进程</strong>之间的通信，即<strong>端到端</strong>的通信。传输单位是报文段或用户数据报。<strong>（应用层、表示层、会话层和传输层使用的是端到端通信）</strong></p>
-<p>功能一：可靠传输、不可靠传输。<br>功能二：差错控制。<br>功能三：流量控制。<br>功能四：复用分用。<br>复用：多个应用层进程可同时使用下面运输层的服务。<br>分用：运输层把收到的信息分别交付给上面应用层中相应的进程。</p>
-<blockquote>
-<p>主要协议：TCP、UDP。</p>
-</blockquote>
-<ul>
-<li><h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2></li>
-</ul>
-<p>主要任务是把<strong>分组</strong>从源端传到目的端，为分组交换网上的不同主机提供通信服务。网络层传输单位是<strong>数据报</strong>（<strong>数据报</strong>太大时可把数据报分割成多个<strong>分组</strong>）<br>功能一：路由控制（选择最佳路径）。<br>功能二：流量控制（控制发送端的速度）。<br>功能三：差错控制。<br>功能四：拥塞控制。</p>
-<blockquote>
-<p>主要协议：IP、IPX、ICMP、IGMP、ARP、RARP、OSPF。</p>
-</blockquote>
-<ul>
-<li><h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2></li>
-</ul>
-<p>主要任务是把网络层传下来的数据报<strong>组装成帧</strong>。<br>数据链路层/链路层的传输单位是<strong>帧</strong>。<br>功能一：成帧（定义帧的开始和结束） ….100010010010001….<br>功能二：流量控制。<br>功能三：差错控制(<strong>帧错+位错</strong>）。<br>功能四：访问（接入）控制。<strong>控制对信道的访问。</strong></p>
-<blockquote>
-<p>主要协议：SDLC、HDLC、PPP、STP。</p>
-</blockquote>
-<ul>
-<li><h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2></li>
-</ul>
-<p>主要任务是在<strong>物理媒体</strong>上实现比特流的<strong>透明传输</strong>。<br>物理层的数据传输单位是<strong>比特</strong>。<br><strong>透明传输：</strong>指不管所传数据是什么样的比特组合，都应当能在链路上传送。<br>功能一：定义接口的特性。<br>功能二：定义传输模式。（单工、半双工、双工）<br>功能三：定义传输速率。<br>功能四：比特同步。<br>功能五：比特编码。</p>
-<blockquote>
-<p>主要协议：Rj45、802.3。</p>
-</blockquote>
+<p>写入数据的原理(内存–&gt;硬盘)<br>java程序–&gt;jvm–&gt;os操作系统–&gt;os调用写数据的方法–&gt;把数据写入到文件中</p>
+<h4 id="字节输出流的使用步骤"><a href="#字节输出流的使用步骤" class="headerlink" title="字节输出流的使用步骤"></a>字节输出流的使用步骤</h4><ol>
+<li>创建FileOutputStream对象，构造方法中传递写入数据的目的地址</li>
+<li>调用FileOutputStream对象中的方法write，把数据写入到文件中</li>
+<li>释放资源 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream fos = new FileOutputStream(&quot;E:\\Down\\a.txt&quot;);</span><br><span class="line">       fos.write(42);</span><br><span class="line">       fos.close();</span><br></pre></td></tr></table></figure>
+<h4 id="FileOutputStream对象写多个字节"><a href="#FileOutputStream对象写多个字节" class="headerlink" title="FileOutputStream对象写多个字节"></a>FileOutputStream对象写多个字节</h4>void write(byte[] b) ：将 b.length 个字节从指定的 byte 数组写入此输出流。</li>
+</ol>
+<p><strong>注意：</strong><br>如果写的第一个字节是正数(0-127)，那么显示的时候查询ASII表<br>如果写的第一个字节是负数，那第一个字节会和第二个字节组成一个中文显示，查询系统默认码表(GBK)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream fos = new FileOutputStream(new File(&quot;E:\\Down\\a.txt&quot;));</span><br><span class="line">      byte[] a = &#123;-65,-66,-68,69,66&#125;;</span><br><span class="line">      fos.write(a);</span><br><span class="line">      fos.close();</span><br><span class="line">文件内容：烤糆B</span><br></pre></td></tr></table></figure>
+<p>void write(byte[] b, int off, int len) ：将指定 byte 数组中从偏移量<br>int off:数组的开始索引<br>int len:写几个字节</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream fos = new FileOutputStream(new File(&quot;E:\\Down\\a.txt&quot;));</span><br><span class="line">      byte[] a = &#123;-65,-66,-68,69,66&#125;;</span><br><span class="line">      fos.write(a,0,2);</span><br><span class="line">      fos.close();</span><br><span class="line">文件内容：烤</span><br></pre></td></tr></table></figure>
+<h4 id="字节输出流的续写和换行"><a href="#字节输出流的续写和换行" class="headerlink" title="字节输出流的续写和换行"></a>字节输出流的续写和换行</h4><p>构造方法：<br>FileOutputStream(File file, boolean append) ：创建一个向指定 File 对象表示的文件中写入数据的文件输出流。<br>FileOutputStream(String name, boolean append) ：创建一个向具有指定 name 的文件中写入数据的输出文件流。</p>
+<h5 id="写换行：写换行符号"><a href="#写换行：写换行符号" class="headerlink" title="写换行：写换行符号"></a>写换行：写换行符号</h5><p>windows:\r\n<br>linux:/n<br>mac:/r</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FileOutputStream fos = new FileOutputStream(new File(&quot;E:\\Down\\a.txt&quot;),true);</span><br><span class="line">      for(int i=0;i&lt;5;i++)&#123;</span><br><span class="line">          fos.write(&quot;你好&quot;.getBytes());</span><br><span class="line">          fos.write(&quot;\r\n&quot;.getBytes());</span><br><span class="line">      &#125;</span><br><span class="line">文件内容：</span><br><span class="line">你好</span><br><span class="line">你好</span><br><span class="line">你好</span><br><span class="line">你好</span><br><span class="line">你好</span><br></pre></td></tr></table></figure>
 
       
 
@@ -298,7 +281,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Java</a>
         		</li>
       		
 		</ul>
@@ -354,7 +337,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/19/Java/%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81/%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -368,18 +351,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TC-IP/TC-IP/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/19/Java/%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5%E6%B5%81/%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5%E6%B5%81/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          TC/IP参考模型
+          字节输入流
         
       </div>
     </a>
   
   
-    <a href="/2019/11/13/%E6%80%9D%E8%80%83/%E6%80%9D%E8%80%83/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">思考</div>
+    <a href="/2019/12/19/Java/File%E7%B1%BB/File%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">File类</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -406,7 +389,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图解"><span class="toc-number">1.</span> <span class="toc-text">图解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用层"><span class="toc-number">2.</span> <span class="toc-text">应用层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表示层"><span class="toc-number">3.</span> <span class="toc-text">表示层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#会话层"><span class="toc-number">4.</span> <span class="toc-text">会话层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输层"><span class="toc-number">5.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络层"><span class="toc-number">6.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据链路层"><span class="toc-number">7.</span> <span class="toc-text">数据链路层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#物理层"><span class="toc-number">8.</span> <span class="toc-text">物理层</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#FileOutputStream"><span class="toc-number">1.</span> <span class="toc-text">FileOutputStream</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#构造方法"><span class="toc-number">1.1.</span> <span class="toc-text">构造方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字节输出流的使用步骤"><span class="toc-number">2.</span> <span class="toc-text">字节输出流的使用步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FileOutputStream对象写多个字节"><span class="toc-number">3.</span> <span class="toc-text">FileOutputStream对象写多个字节</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字节输出流的续写和换行"><span class="toc-number">4.</span> <span class="toc-text">字节输出流的续写和换行</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#写换行：写换行符号"><span class="toc-number">4.1.</span> <span class="toc-text">写换行：写换行符号</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
