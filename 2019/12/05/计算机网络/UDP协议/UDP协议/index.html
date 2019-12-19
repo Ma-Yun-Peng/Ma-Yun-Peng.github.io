@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ARP协议 | 马云鹏</title>
+  <title>UDP协议 | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="由于在实际网络的链路上传送数据帧时，最终必须使用MAC地址。ARP协议：完成主机或路由器P地址到MAC地址的映射。解决下一跳走哪的问题。">
+  <meta name="description" content="UDP只在IP数据报服务之上增加了很少的功能，即复用分用和差错检测功能。">
 <meta name="keywords" content="-计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ARP协议">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&#x2F;ARP%E5%8D%8F%E8%AE%AE&#x2F;ARP%E5%8D%8F%E8%AE%AE&#x2F;index.html">
+<meta property="og:title" content="UDP协议">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&#x2F;UDP%E5%8D%8F%E8%AE%AE&#x2F;UDP%E5%8D%8F%E8%AE%AE&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
-<meta property="og:description" content="由于在实际网络的链路上传送数据帧时，最终必须使用MAC地址。ARP协议：完成主机或路由器P地址到MAC地址的映射。解决下一跳走哪的问题。">
+<meta property="og:description" content="UDP只在IP数据报服务之上增加了很少的功能，即复用分用和差错检测功能。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-04T08:55:46.426Z">
+<meta property="og:updated_time" content="2019-12-05T08:01:58.451Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -167,14 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络/ARP协议/ARP协议" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-计算机网络/UDP协议/UDP协议" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ARP协议
+      UDP协议
     </h1>
   
  
@@ -191,22 +191,20 @@
   
   
         
-        <a href="/2019/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ARP%E5%8D%8F%E8%AE%AE/ARP%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
-  	<time datetime="2019-12-04T08:45:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-04</time>
+        <a href="/2019/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E5%8D%8F%E8%AE%AE/UDP%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
+  	<time datetime="2019-12-05T07:58:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>由于在实际网络的链路上传送数据帧时，最终必须使用MAC地址。<br>ARP协议：完成主机或路由器P地址到MAC地址的映射。解决下一跳走哪的问题。</p>
+        <p>UDP只在IP数据报服务之上增加了很少的功能，即复用分用和差错检测功能。</p>
 <a id="more"></a>
-<p>ARP协议使用过程:<br>检查ARP高速缓存,有对应表项则写入MAC帧,没有则用目的MAC地址为ff-ff-ff-ff-ff-FF的帧封装并广播ARP请求分组,同一局域网中所有主机都能收到该请求。目的主机收到请求后就会向源主机单播一个ARP响应分组,源主机收到后将此映射写入ARP缓存(10-20min更新一次)<br>ARP协议4种典型情况:<br>1.主机A发给本网络上的主机B:用ARP找到主机B的硬件地址;<br>2.主机A发给另一网络上的主机B:用ARP找到本网络上一个路由器网关)的硬件地址;<br>3.路由器发给本网络的主机A:用ARP找到主机A的硬件地址;<br>4.路由器发给另一网络的主机B:用ARP找到本网络上的一个路由器的硬件地址。</p>
-<p>练习题：</p>
-<blockquote>
-<p>主机发送IP数据报给主机B，经过了5个路由器，请问此过程共使用了几次ARP协议？</p>
-</blockquote>
-<p>答案：6次。</p>
+<p>UDP的主要特点：</p>
+<ol>
+<li>UDP是无连接的，减少开销和发送数据之前的时延。</li>
+</ol>
 
       
 
@@ -307,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ARP%E5%8D%8F%E8%AE%AE/ARP%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E5%8D%8F%E8%AE%AE/UDP%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +319,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E5%8D%8F%E8%AE%AE/UDP%E5%8D%8F%E8%AE%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/19/Java/File%E7%B1%BB/File%E7%B1%BB/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          UDP协议
+          File类
         
       </div>
     </a>
   
   
-    <a href="/2019/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%97%A0%E5%88%86%E7%B1%BB%E7%BC%96%E5%9D%80CIDR%E7%BB%83%E4%B9%A0%E9%A2%98/%E6%97%A0%E5%88%86%E7%B1%BB%E7%BC%96%E5%9D%80CIDR%E7%BB%83%E4%B9%A0%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">无分类编址CIDR练习题</div>
+    <a href="/2019/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ARP%E5%8D%8F%E8%AE%AE/ARP%E5%8D%8F%E8%AE%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ARP协议</div>
       <i class="icon-circle-right"></i>
     </a>
   
