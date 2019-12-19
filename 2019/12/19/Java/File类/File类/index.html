@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>File类 | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="File类的静态成员变量：static String pathSeparator (;) 与系统有关的路径分隔符，为了方便，他被表示为一个字符串。">
+  <meta name="description" content="File类的静态成员变量：">
 <meta name="keywords" content="-Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="File类">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;Java&#x2F;File%E7%B1%BB&#x2F;File%E7%B1%BB&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
-<meta property="og:description" content="File类的静态成员变量：static String pathSeparator (;) 与系统有关的路径分隔符，为了方便，他被表示为一个字符串。">
+<meta property="og:description" content="File类的静态成员变量：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-19T05:39:32.468Z">
+<meta property="og:updated_time" content="2019-12-19T07:44:02.281Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -199,9 +199,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>File类的静态成员变量：<br>static String pathSeparator (;) 与系统有关的路径分隔符，为了方便，他被表示为一个字符串。</p>
+        <p>File类的静态成员变量：</p>
 <a id="more"></a>
-<p>static char pathSeparatorChar  与系统有关的路径分隔符<br>static String separator () 与系统有关的默认名称分隔符 (“”+separator)<br>static char separatorChar 与系统有关的默认名称分隔符<br><strong>注意：</strong>操作路径不能写”死了” 比如 E:\blog-&gt; windows  E:/blog -&gt;linux  应写成**”E:”+File.separator+”blog”</p>
+<p>static String pathSeparator (;) 与系统有关的路径分隔符，为了方便，他被表示为一个字符串。<br>static char pathSeparatorChar  与系统有关的路径分隔符<br>static String separator (\) 与系统有关的默认名称分隔符 (“”+separator)<br>static char separatorChar 与系统有关的默认名称分隔符<br><strong>注意：</strong>操作路径不能写”死了” 比如 E:\blog-&gt; windows  E:/blog -&gt;linux  应写成**”E:”+File.separator+”blog”</p>
 <h3 id="File类的构造方法"><a href="#File类的构造方法" class="headerlink" title="File类的构造方法"></a>File类的构造方法</h3><ul>
 <li>File(String pathname) 通过将给定路径名字符串转化为抽象路径来创建一个新File实例。<br>参数：<br>String pathname:字符串的路径名称<br>路径可以是以文件结尾，也可以是以文件夹结尾<br>路径可以是相对路径，也可以是绝对路径<br>路径可以是存在的，也可以是不存在的<br>创建File对象，只是把字符串路径封装为File对象，不考虑路径的真假情况</li>
 </ul>
@@ -229,8 +229,17 @@
 <li>public boolean mkdir():创建由此File表示的目录。(单级文件夹)</li>
 <li>public boolean mkdirs():创建由此File表示的目录，包括任何必需但不存在的父目录。(多级文件夹)<h4 id="File类遍历-文件夹-目录功能"><a href="#File类遍历-文件夹-目录功能" class="headerlink" title="File类遍历(文件夹)目录功能"></a>File类遍历(文件夹)目录功能</h4></li>
 <li>public String[] list():返回一个String数组，表示该File目录中的所有子文件或目录。(路径不存在会报空指针异常)</li>
-<li>public File listFiles():返回一个File数组，表示该File目录中的所有的子文件或目录。(可以查找到隐藏文件和目录)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> File f2 = new File(&quot;E:&quot;+File.separator+&quot;blog&quot;);</span><br><span class="line">        String[] list = f2.list();</span><br><span class="line">        for (String s :list) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">输出结果：</span><br><span class="line">.deploy_git</span><br><span class="line">.gitignore</span><br><span class="line">db.json</span><br><span class="line">node_modules</span><br><span class="line">package-lock.json</span><br><span class="line">package.json</span><br><span class="line">public</span><br><span class="line">scaffolds</span><br><span class="line">source</span><br><span class="line">themes</span><br><span class="line">_config.yml</span><br><span class="line"></span><br><span class="line">-------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">File f2 = new File(&quot;E:&quot;+File.separator+&quot;blog&quot;);</span><br><span class="line">        File[] files = f2.listFiles();</span><br><span class="line">        for (File s:files) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">输出结果：</span><br><span class="line">E:\blog\.deploy_git</span><br><span class="line">E:\blog\.gitignore</span><br><span class="line">E:\blog\db.json</span><br><span class="line">E:\blog\node_modules</span><br><span class="line">E:\blog\package-lock.json</span><br><span class="line">E:\blog\package.json</span><br><span class="line">E:\blog\public</span><br><span class="line">E:\blog\scaffolds</span><br><span class="line">E:\blog\source</span><br><span class="line">E:\blog\themes</span><br><span class="line">E:\blog\_config.yml</span><br></pre></td></tr></table></figure></li>
+<li>public File listFiles():返回一个File数组，表示该File目录中的所有的子文件或目录。(可以查找到隐藏文件和目录)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> File f2 = new File(&quot;E:&quot;+File.separator+&quot;blog&quot;);</span><br><span class="line">        String[] list = f2.list();</span><br><span class="line">        for (String s :list) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">输出结果：</span><br><span class="line">.deploy_git</span><br><span class="line">.gitignore</span><br><span class="line">db.json</span><br><span class="line">node_modules</span><br><span class="line">package-lock.json</span><br><span class="line">package.json</span><br><span class="line">public</span><br><span class="line">scaffolds</span><br><span class="line">source</span><br><span class="line">themes</span><br><span class="line">_config.yml</span><br><span class="line"></span><br><span class="line">-------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">File f2 = new File(&quot;E:&quot;+File.separator+&quot;blog&quot;);</span><br><span class="line">        File[] files = f2.listFiles();</span><br><span class="line">        for (File s:files) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">输出结果：</span><br><span class="line">E:\blog\.deploy_git</span><br><span class="line">E:\blog\.gitignore</span><br><span class="line">E:\blog\db.json</span><br><span class="line">E:\blog\node_modules</span><br><span class="line">E:\blog\package-lock.json</span><br><span class="line">E:\blog\package.json</span><br><span class="line">E:\blog\public</span><br><span class="line">E:\blog\scaffolds</span><br><span class="line">E:\blog\source</span><br><span class="line">E:\blog\themes</span><br><span class="line">E:\blog\_config.yml</span><br></pre></td></tr></table></figure>
+<h4 id="FileFilter过滤器"><a href="#FileFilter过滤器" class="headerlink" title="FileFilter过滤器"></a>FileFilter过滤器</h4></li>
+<li>listFiles(FileFilter filter) <pre><code>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。 </code></pre>java.io.FileFilter 接口  ： 用于抽象路径名(File对象)的过滤器。<br>作用：用来过滤文件(File对象)<br>抽象方法：用来过滤文件的方法<pre><code>boolean accept(File pathname) 
+测试指定抽象路径名是否应该包含在某个路径名列表中。 
+参数：File pathname使用ListFiles方法遍历目录，得到的每一个文件对象。</code></pre></li>
+<li>File[] listFiles(FilenameFilter filter) <pre><code>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。 </code></pre>java.io.FilenameFilter 接口 : 实现此接口的类实例可用于过滤器文件名。<br>作用：用于过滤文件名称<br>抽象方法：用来过滤文件的方法<pre><code>boolean accept(File dir, String name) 
+测试指定文件是否应该包含在某一文件列表中。
+参数：File dir，构造方法中传递的被遍历的目录
+String name，使用ListFiles方法获取的每一个文件/文件夹的名称</code></pre></li>
 </ul>
+<p><strong>注意：</strong>两个过滤器接口都是没有实现类的，需要我们自己写实现类，重写过滤的方法accept，在方法中定义过滤的规则。</p>
 
       
 
@@ -374,7 +383,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#File类的构造方法"><span class="toc-number">1.</span> <span class="toc-text">File类的构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File类的常用方法"><span class="toc-number">2.</span> <span class="toc-text">File类的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#File类获取功能的方法"><span class="toc-number">2.1.</span> <span class="toc-text">File类获取功能的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File类判断功能的方法"><span class="toc-number">2.2.</span> <span class="toc-text">File类判断功能的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File类创建删除功能的方法"><span class="toc-number">2.3.</span> <span class="toc-text">File类创建删除功能的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File类遍历-文件夹-目录功能"><span class="toc-number">2.4.</span> <span class="toc-text">File类遍历(文件夹)目录功能</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#File类的构造方法"><span class="toc-number">1.</span> <span class="toc-text">File类的构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File类的常用方法"><span class="toc-number">2.</span> <span class="toc-text">File类的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#File类获取功能的方法"><span class="toc-number">2.1.</span> <span class="toc-text">File类获取功能的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File类判断功能的方法"><span class="toc-number">2.2.</span> <span class="toc-text">File类判断功能的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File类创建删除功能的方法"><span class="toc-number">2.3.</span> <span class="toc-text">File类创建删除功能的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File类遍历-文件夹-目录功能"><span class="toc-number">2.4.</span> <span class="toc-text">File类遍历(文件夹)目录功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FileFilter过滤器"><span class="toc-number">2.5.</span> <span class="toc-text">FileFilter过滤器</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -520,10 +529,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-思考</a>
