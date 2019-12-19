@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="马云鹏">
 <meta property="og:description" content="File类的静态成员变量：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-19T07:44:02.281Z">
+<meta property="og:updated_time" content="2019-12-19T07:51:05.151Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -231,13 +231,16 @@
 <li>public String[] list():返回一个String数组，表示该File目录中的所有子文件或目录。(路径不存在会报空指针异常)</li>
 <li>public File listFiles():返回一个File数组，表示该File目录中的所有的子文件或目录。(可以查找到隐藏文件和目录)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> File f2 = new File(&quot;E:&quot;+File.separator+&quot;blog&quot;);</span><br><span class="line">        String[] list = f2.list();</span><br><span class="line">        for (String s :list) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">输出结果：</span><br><span class="line">.deploy_git</span><br><span class="line">.gitignore</span><br><span class="line">db.json</span><br><span class="line">node_modules</span><br><span class="line">package-lock.json</span><br><span class="line">package.json</span><br><span class="line">public</span><br><span class="line">scaffolds</span><br><span class="line">source</span><br><span class="line">themes</span><br><span class="line">_config.yml</span><br><span class="line"></span><br><span class="line">-------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">File f2 = new File(&quot;E:&quot;+File.separator+&quot;blog&quot;);</span><br><span class="line">        File[] files = f2.listFiles();</span><br><span class="line">        for (File s:files) &#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">输出结果：</span><br><span class="line">E:\blog\.deploy_git</span><br><span class="line">E:\blog\.gitignore</span><br><span class="line">E:\blog\db.json</span><br><span class="line">E:\blog\node_modules</span><br><span class="line">E:\blog\package-lock.json</span><br><span class="line">E:\blog\package.json</span><br><span class="line">E:\blog\public</span><br><span class="line">E:\blog\scaffolds</span><br><span class="line">E:\blog\source</span><br><span class="line">E:\blog\themes</span><br><span class="line">E:\blog\_config.yml</span><br></pre></td></tr></table></figure>
 <h4 id="FileFilter过滤器"><a href="#FileFilter过滤器" class="headerlink" title="FileFilter过滤器"></a>FileFilter过滤器</h4></li>
-<li>listFiles(FileFilter filter) <pre><code>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。 </code></pre>java.io.FileFilter 接口  ： 用于抽象路径名(File对象)的过滤器。<br>作用：用来过滤文件(File对象)<br>抽象方法：用来过滤文件的方法<pre><code>boolean accept(File pathname) 
-测试指定抽象路径名是否应该包含在某个路径名列表中。 
-参数：File pathname使用ListFiles方法遍历目录，得到的每一个文件对象。</code></pre></li>
-<li>File[] listFiles(FilenameFilter filter) <pre><code>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。 </code></pre>java.io.FilenameFilter 接口 : 实现此接口的类实例可用于过滤器文件名。<br>作用：用于过滤文件名称<br>抽象方法：用来过滤文件的方法<pre><code>boolean accept(File dir, String name) 
-测试指定文件是否应该包含在某一文件列表中。
-参数：File dir，构造方法中传递的被遍历的目录
-String name，使用ListFiles方法获取的每一个文件/文件夹的名称</code></pre></li>
+</ul>
+<ul>
+<li><strong>listFiles(FileFilter filter)</strong><br>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br>java.io.FileFilter 接口  ： 用于抽象路径名(File对象)的过滤器。<br>作用：用来过滤文件(File对象)<br>抽象方法：用来过滤文件的方法<blockquote>
+<p>boolean accept(File pathname)<br>测试指定抽象路径名是否应该包含在某个路径名列表中。<br>参数：File pathname使用ListFiles方法遍历目录，得到的每一个文件对象。</p>
+</blockquote>
+</li>
+<li><strong>File[] listFiles(FilenameFilter filter)</strong><br>返回抽象路径名数组，这些路径名表示此抽象路径名表示的目录中满足指定过滤器的文件和目录。<br>java.io.FilenameFilter 接口 : 实现此接口的类实例可用于过滤器文件名。<br>作用：用于过滤文件名称<br>抽象方法：用来过滤文件的方法<blockquote>
+<p>boolean accept(File dir, String name)<br>测试指定文件是否应该包含在某一文件列表中。<br>参数：File dir，构造方法中传递的被遍历的目录<br>String name，使用ListFiles方法获取的每一个文件/文件夹的名称</p>
+</blockquote>
+</li>
 </ul>
 <p><strong>注意：</strong>两个过滤器接口都是没有实现类的，需要我们自己写实现类，重写过滤的方法accept，在方法中定义过滤的规则。</p>
 
