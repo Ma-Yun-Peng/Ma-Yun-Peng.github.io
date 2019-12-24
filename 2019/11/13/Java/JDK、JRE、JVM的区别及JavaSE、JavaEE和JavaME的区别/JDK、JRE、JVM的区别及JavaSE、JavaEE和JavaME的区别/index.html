@@ -37,6 +37,9 @@
 
 </head>
 
+
+<!--插入评论-->
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -374,44 +377,44 @@
   
   
   
-
   
 
   
 
   
 
-
-
-
-
   
-      <section id="comments" class="comments">
-        <style>
-          .comments{margin:30px;padding:10px;background:#fff}
-          @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-        </style>
-        <div id="vcomment" class="comment"></div>
+
+
+
+
+<!--插入评论-->
+
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div> 
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-  var notify = 'false' == true ? true : false;
-  var verify = 'false' == true ? true : false;
-  new Valine({
-    av: AV,
-    el: '#vcomment',
-    notify: notify,
-    app_id: "Oqd6gc9UVGAvaHeC1BB6wYwK-gzGzoHsz",
-    app_key: "REMSirCGqs7WW1YbYE8hNMUV",
-    placeholder: "请留下您的想法...",
-    avatar: "mm",
-  });
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "Oqd6gc9UVGAvaHeC1BB6wYwK-gzGzoHsz",
+            app_key: "REMSirCGqs7WW1YbYE8hNMUV",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
+    }
 </script>
-
     </section>
   
-
 
 
           </div>
@@ -603,7 +606,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">——我写博客的原因之一：重温一下自己专业知识，温故而知新，可以为师矣。</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">——我写博客的原因：重温一下自己专业知识，温故而知新，可以为师矣。</div>
   	  	
     	</section>
     
