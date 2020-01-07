@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="马云鹏">
 <meta property="og:description" content="当整形数据和浮点型数据相运算时，会默认先把double型转化为int型">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-07T12:16:21.256Z">
+<meta property="og:updated_time" content="2020-01-07T12:32:42.613Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -204,6 +204,8 @@
 <a id="more"></a>
 <p>如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int num = 20*(1/4);  //先将1/4转换为int型 即 1/4 = 0。</span><br><span class="line">        double num2 = 20*(1/4);</span><br><span class="line">        System.out.println(num);</span><br><span class="line">        System.out.println(num2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">运行结果：</span><br><span class="line">0</span><br><span class="line">0.0</span><br></pre></td></tr></table></figure>
+<p>又如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Object a = 0.25;</span><br><span class="line">        Object b= 1/4;</span><br><span class="line">        System.out.println(a instanceof Double);</span><br><span class="line">        System.out.println(b instanceof Integer);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">运行结果：</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
       
 
       
