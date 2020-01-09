@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>UDP协议 | 马云鹏</title>
+  <title>循环队列 | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="UDP只在IP数据报服务之上增加了很少的功能，即复用分用和差错检测功能。">
-<meta name="keywords" content="-计算机网络">
+  <meta name="description" content="为充分利用向量空间，克服”假溢出”现象的方法是：将向量空间想象为一个首尾相接的圆环，并称这种向量为循环向量。存储在其中的队列称为循环队列（Circular Queue）。循环队列是把顺序队列首尾相连，把存储队列元素的表从逻辑上看成一个环，成为循环队列。">
+<meta name="keywords" content="-数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UDP协议">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&#x2F;UDP%E5%8D%8F%E8%AE%AE&#x2F;UDP%E5%8D%8F%E8%AE%AE&#x2F;index.html">
+<meta property="og:title" content="循环队列">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;09&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&#x2F;%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97&#x2F;%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
-<meta property="og:description" content="UDP只在IP数据报服务之上增加了很少的功能，即复用分用和差错检测功能。">
+<meta property="og:description" content="为充分利用向量空间，克服”假溢出”现象的方法是：将向量空间想象为一个首尾相接的圆环，并称这种向量为循环向量。存储在其中的队列称为循环队列（Circular Queue）。循环队列是把顺序队列首尾相连，把存储队列元素的表从逻辑上看成一个环，成为循环队列。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-05T08:01:58.451Z">
+<meta property="og:updated_time" content="2020-01-09T10:29:17.070Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -170,14 +170,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络/UDP协议/UDP协议" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构/循环队列/循环队列" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      UDP协议
+      循环队列
     </h1>
   
  
@@ -192,21 +192,22 @@
   </a>
   
         
-        <a href="/2019/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E5%8D%8F%E8%AE%AE/UDP%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
-  	<time datetime="2019-12-05T07:58:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+        <a href="/2020/01/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/" class="archive-article-date">
+  	<time datetime="2020-01-09T10:23:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>UDP只在IP数据报服务之上增加了很少的功能，即复用分用和差错检测功能。</p>
+        <p>为充分利用向量空间，克服”假溢出”现象的方法是：将向量空间想象为一个首尾相接的圆环，并称这种向量为循环向量。存储在其中的队列称为循环队列（Circular Queue）。循环队列是把顺序队列首尾相连，把存储队列元素的表从逻辑上看成一个环，成为循环队列。</p>
 <a id="more"></a>
-<p>UDP的主要特点：</p>
-<ol>
-<li>UDP是无连接的，减少开销和发送数据之前的时延。</li>
-</ol>
-
+<p>数组队列的时间复杂度为O(n),循环队列的时间复杂度为O(1)。<br>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">public class LoopQueue&lt;E&gt; implements Queue&lt;E&gt; &#123;</span><br><span class="line">    private E[] data;//泛型数组</span><br><span class="line">    private int tail;//尾部指针,初始化为0</span><br><span class="line">    private int front;//头部指针,初始化为0</span><br><span class="line">    private int size;//数据长度,初始化为0</span><br><span class="line"></span><br><span class="line">    public LoopQueue(int capacity)&#123;</span><br><span class="line">        data = (E[]) new Object[capacity + 1];//预留一个位置给tail，防止数组装满时tail 等于 front</span><br><span class="line">    &#125;</span><br><span class="line">    public LoopQueue()&#123;</span><br><span class="line">        this(10);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //获取循环队列的容量</span><br><span class="line">    public int getCapacity()&#123;</span><br><span class="line">        return data.length - 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //获取数据长度</span><br><span class="line">    @Override</span><br><span class="line">    public int getSize() &#123;</span><br><span class="line">        return size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //判断循环队列是否为空</span><br><span class="line">    @Override</span><br><span class="line">    public boolean isEmpty() &#123;</span><br><span class="line">        return tail == front;//return size == 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //将元素e插入队列</span><br><span class="line">    @Override</span><br><span class="line">    public void enqueue(E e) &#123;</span><br><span class="line">        if((tail+1) % data.length == front)//判断数组是否装满</span><br><span class="line">            changeLoopQueue(2*getCapacity());//将循环队列的容量增加至原来的两倍</span><br><span class="line">        data[tail] = e;</span><br><span class="line">        tail = (tail + 1) % data.length; //防止tail溢出</span><br><span class="line">        size ++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //改变循环队列的容量</span><br><span class="line">    private void changeLoopQueue(int capacity) &#123;</span><br><span class="line">        E[] newData = (E[]) new Object[capacity + 1];</span><br><span class="line">        for (int i = 0; i &lt; size ; i++) &#123;</span><br><span class="line">            newData[i]  = data[(i + front) % data.length];//可以将循环队列按照从头部到尾部顺序重新赋值入新数组</span><br><span class="line">        &#125;</span><br><span class="line">        data = newData;</span><br><span class="line">        front = 0; //front要置0</span><br><span class="line">        tail = size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //出队</span><br><span class="line">    @Override</span><br><span class="line">    public E dequeue() &#123;</span><br><span class="line">        if(size == 0)</span><br><span class="line">            throw new IllegalArgumentException(&quot;当前队列没有元素&quot;);</span><br><span class="line">        else if(size == getCapacity() / 4 &amp;&amp; (getCapacity() / 2 ) != 0)//不要忘了(getCapacity() / 2 ) != 0，防止创建容量为0的数组</span><br><span class="line">            changeLoopQueue(getCapacity() / 2);</span><br><span class="line">        E e = data[front];</span><br><span class="line">        data[front] = null; //将出队元素置空</span><br><span class="line">       front = (front + 1) % data.length; // 错误想法:(貌似不用 (front + 1) % data.length;   front也不会溢出 ，因为有size控制。),因为当有元素出队时(size!=0),此时再有元素入队，占用先前出队元素的位置，那么front就需要循环回此时的数组索引</span><br><span class="line">        size --;</span><br><span class="line">        return e;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public E getFront() &#123;</span><br><span class="line">        if(size == 0)</span><br><span class="line">            throw new IllegalArgumentException(&quot;当前队列没有元素&quot;);</span><br><span class="line">        return data[front];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        StringBuilder str = new StringBuilder();</span><br><span class="line">        str.append(String.format(&quot;Array: size = %d , capacity = %d\n &quot;,size,getCapacity()));</span><br><span class="line">        str.append(&quot;LoopQueue : &quot;);</span><br><span class="line">        str.append(&quot;front [&quot;);</span><br><span class="line">        for (int i = front; i != tail % data.length ; i = (i+1) % data.length) &#123;</span><br><span class="line">            str.append(data[i]);</span><br><span class="line">            if ((i + 1) % data.length != tail)//判断是否为队列中的最后一个元素</span><br><span class="line">                str.append(&quot;, &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        str.append(&quot;] tail&quot;);</span><br><span class="line">        return str.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用接口Queue：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public interface Queue&lt;E&gt; &#123;</span><br><span class="line">    int getSize();//获取数据长度</span><br><span class="line">    boolean isEmpty();//判断队列是否为空</span><br><span class="line">    void enqueue(E e);//入队列</span><br><span class="line">    E dequeue();//出队列</span><br><span class="line">    E getFront();//获取队列头部元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        LoopQueue&lt;Integer&gt; queue = new LoopQueue&lt;&gt;();</span><br><span class="line">        for (int i = 0; i &lt; 11; i++) &#123;</span><br><span class="line">            queue.enqueue(i);</span><br><span class="line">            System.out.println(queue);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        for (int i = 0; i &lt; 11; i++) &#123;</span><br><span class="line">            queue.dequeue();</span><br><span class="line">            System.out.println(queue);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果：</span><br><span class="line">LoopQueue: size = 1 , capacity = 10</span><br><span class="line"> front [0] tail</span><br><span class="line">LoopQueue: size = 2 , capacity = 10</span><br><span class="line"> front [0, 1] tail</span><br><span class="line">LoopQueue: size = 3 , capacity = 10</span><br><span class="line"> front [0, 1, 2] tail</span><br><span class="line">LoopQueue: size = 4 , capacity = 10</span><br><span class="line"> front [0, 1, 2, 3] tail</span><br><span class="line">LoopQueue: size = 5 , capacity = 10</span><br><span class="line"> front [0, 1, 2, 3, 4] tail</span><br><span class="line">LoopQueue: size = 6 , capacity = 10</span><br><span class="line"> front [0, 1, 2, 3, 4, 5] tail</span><br><span class="line">LoopQueue: size = 7 , capacity = 10</span><br><span class="line"> front [0, 1, 2, 3, 4, 5, 6] tail</span><br><span class="line">LoopQueue: size = 8 , capacity = 10</span><br><span class="line"> front [0, 1, 2, 3, 4, 5, 6, 7] tail</span><br><span class="line">LoopQueue: size = 9 , capacity = 10</span><br><span class="line"> front [0, 1, 2, 3, 4, 5, 6, 7, 8] tail</span><br><span class="line">LoopQueue: size = 10 , capacity = 10</span><br><span class="line"> front [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] tail</span><br><span class="line">LoopQueue: size = 11 , capacity = 20</span><br><span class="line"> front [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 10 , capacity = 20</span><br><span class="line"> front [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 9 , capacity = 20</span><br><span class="line"> front [2, 3, 4, 5, 6, 7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 8 , capacity = 20</span><br><span class="line"> front [3, 4, 5, 6, 7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 7 , capacity = 20</span><br><span class="line"> front [4, 5, 6, 7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 6 , capacity = 20</span><br><span class="line"> front [5, 6, 7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 5 , capacity = 20</span><br><span class="line"> front [6, 7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 4 , capacity = 10</span><br><span class="line"> front [7, 8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 3 , capacity = 10</span><br><span class="line"> front [8, 9, 10] tail</span><br><span class="line">LoopQueue: size = 2 , capacity = 10</span><br><span class="line"> front [9, 10] tail</span><br><span class="line">LoopQueue: size = 1 , capacity = 5</span><br><span class="line"> front [10] tail</span><br><span class="line">LoopQueue: size = 0 , capacity = 2</span><br><span class="line"> front [] tail</span><br></pre></td></tr></table></figure>
       
 
       
@@ -250,7 +251,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-数据结构</a>
         		</li>
       		
 		</ul>
@@ -306,7 +307,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/UDP%E5%8D%8F%E8%AE%AE/UDP%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -320,18 +321,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/19/Java/File%E7%B1%BB/File%E7%B1%BB/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          File类
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/ARP%E5%8D%8F%E8%AE%AE/ARP%E5%8D%8F%E8%AE%AE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ARP协议</div>
+    <a href="/2020/01/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/%E9%98%9F%E5%88%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">队列</div>
       <i class="icon-circle-right"></i>
     </a>
   
