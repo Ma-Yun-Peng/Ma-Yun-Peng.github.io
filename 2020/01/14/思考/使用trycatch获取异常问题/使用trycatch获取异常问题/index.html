@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>使用trycatch获取异常问题 | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题 ：try里面return a , catch里面return b , finally里面return c ,最后结果怎么样？ 猜测：在java 中 finally代码一定会执行 ，但是fun()方法只能返回一个变量 ，于是猜测最终执行finally中的return 语句。(猜测错误)">
+  <meta name="description" content="问题 ：try里面return a , catch里面return b , finally里面return c ,最后结果怎么样？ 猜测：在java 中 finally代码一定会执行 ，但是fun()方法只能返回一个变量 ，于是猜测最终执行finally中的return 语句。">
 <meta name="keywords" content="-思考">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用trycatch获取异常问题">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;14&#x2F;%E6%80%9D%E8%80%83&#x2F;%E4%BD%BF%E7%94%A8trycatch%E8%8E%B7%E5%8F%96%E5%BC%82%E5%B8%B8%E9%97%AE%E9%A2%98&#x2F;%E4%BD%BF%E7%94%A8trycatch%E8%8E%B7%E5%8F%96%E5%BC%82%E5%B8%B8%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
-<meta property="og:description" content="问题 ：try里面return a , catch里面return b , finally里面return c ,最后结果怎么样？ 猜测：在java 中 finally代码一定会执行 ，但是fun()方法只能返回一个变量 ，于是猜测最终执行finally中的return 语句。(猜测错误)">
+<meta property="og:description" content="问题 ：try里面return a , catch里面return b , finally里面return c ,最后结果怎么样？ 猜测：在java 中 finally代码一定会执行 ，但是fun()方法只能返回一个变量 ，于是猜测最终执行finally中的return 语句。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;finally_1.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;finally_2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;finally_3.png">
-<meta property="og:updated_time" content="2020-01-14T14:04:19.657Z">
+<meta property="og:updated_time" content="2020-01-15T01:42:20.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;finally_1.png">
   
@@ -205,7 +205,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>问题 ：try里面return a , catch里面return b , finally里面return c ,最后结果怎么样？</p>
-<p>猜测：在java 中 finally代码一定会执行 ，但是fun()方法只能返回一个变量 ，于是猜测最终执行finally中的return 语句。(猜测错误)</p>
+<p>猜测：在java 中 finally代码一定会执行 ，但是fun()方法只能返回一个变量 ，于是猜测最终执行finally中的return 语句。</p>
 <a id="more"></a>
 <p>测试代码1：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class demo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int number = 1 ;</span><br><span class="line">        int fun = fun(number);</span><br><span class="line">        System.out.println(fun);</span><br><span class="line">    &#125;</span><br><span class="line">    public static int fun(int number)&#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            return 1/0;</span><br><span class="line">        &#125;</span><br><span class="line">        catch (ArithmeticException e)&#123;</span><br><span class="line">            number = 2;</span><br><span class="line">            return number;</span><br><span class="line">        &#125;</span><br><span class="line">        finally &#123;</span><br><span class="line">            number = 3;</span><br><span class="line">            return number;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果：</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
@@ -215,6 +215,21 @@
 <p>上述代码中的finally代码块 编译器一直提示：<br><img src="/images/finally_1.png" alt><br>“finally”块不能正常完成。</p>
 <p><img src="/images/finally_2.png" alt><br>“return”在“finally”块内被阻止。</p>
 <p><img src="/images/finally_3.png" alt><br>从未使用在’number ++’处更改的值</p>
+<p>找到原因：return number++ 等效于 int x = number++; return x;  因此编译器提示’number++’未使用。因此测试代码2 依旧符合猜测。</p>
+<hr>
+<p>查找资料可以做出以下总结：<br>可以参考<a href="http://www.2cto.com/kf/201010/76754.html这篇文章，也可以参考《深入Java虚拟机：JVM高级特性与最佳实践》第6章中对属性表集合的讲解部分。" target="_blank" rel="noopener">http://www.2cto.com/kf/201010/76754.html这篇文章，也可以参考《深入Java虚拟机：JVM高级特性与最佳实践》第6章中对属性表集合的讲解部分。</a></p>
+<p>对于含有return语句的情况，这里我们可以简单地总结如下：</p>
+<pre><code>try语句在返回前，将其他所有的操作执行完，保留好要返回的值，而后转入执行finally中的语句，而后分为以下三种情况：
+
+情况一：如果finally中有return语句，则会将try中的return语句”覆盖“掉，直接执行finally中的return语句，得到返回值，这样便无法得到try之前保留好的返回值。
+
+情况二：如果finally中没有return语句，也没有改变要返回值，则执行完finally中的语句后，会接着执行try中的return语句，返回之前保留的值。
+
+情况三：如果finally中没有return语句，但是改变了要返回的值，这里有点类似与引用传递和值传递的区别，分以下两种情况，：
+
+    1）如果return的数据是基本数据类型或文本字符串，则在finally中对该基本数据的改变不起作用，try中的return语句依然会返回进入finally块之前保留的值。
+
+    2）如果return的数据是引用数据类型，而在finally中对该引用数据类型的属性值的改变起作用，try中的return语句返回的就是在finally中改变后的该属性的值。</code></pre><p>————————————————<br>参考链接：<a href="https://blog.csdn.net/ns_code/article/details/17485221" target="_blank" rel="noopener">https://blog.csdn.net/ns_code/article/details/17485221</a></p>
 
       
 
@@ -328,6 +343,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/01/15/%E6%80%9D%E8%80%83/i-%E4%B8%8E-i%E9%97%AE%E9%A2%98/i-%E4%B8%8E-i%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          i++与++i问题
+        
+      </div>
+    </a>
   
   
     <a href="/2020/01/14/Java/XML/XML/" id="article-nav-older" class="article-nav-link-wrap">
@@ -517,11 +541,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color2">-计算机网络</a>
               </li>
             
             <div class="clearfix"></div>
