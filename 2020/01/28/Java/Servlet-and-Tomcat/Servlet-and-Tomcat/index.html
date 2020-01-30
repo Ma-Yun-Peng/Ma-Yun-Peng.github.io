@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>html | 马云鹏</title>
+  <title>Servlet and Tomcat | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HTML 概念：是最基础的网页开发语言">
-<meta name="keywords" content="-Java">
+  <meta name="description" content="web相关概念回顾软件架构 C&#x2F;S：客户端&#x2F;服务器端  B&#x2F;S：浏览器&#x2F;服务器端">
+<meta name="keywords" content="-java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;23&#x2F;Java&#x2F;html&#x2F;html&#x2F;index.html">
+<meta property="og:title" content="Servlet and Tomcat">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;28&#x2F;Java&#x2F;Servlet-and-Tomcat&#x2F;Servlet-and-Tomcat&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
-<meta property="og:description" content="HTML 概念：是最基础的网页开发语言">
+<meta property="og:description" content="web相关概念回顾软件架构 C&#x2F;S：客户端&#x2F;服务器端  B&#x2F;S：浏览器&#x2F;服务器端">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-23T06:23:27.719Z">
+<meta property="og:updated_time" content="2020-01-30T04:17:41.439Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -170,14 +170,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java/html/html" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java/Servlet-and-Tomcat/Servlet-and-Tomcat" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      html
+      Servlet and Tomcat
     </h1>
   
  
@@ -192,126 +192,126 @@
   </a>
   
         
-        <a href="/2019/12/23/Java/html/html/" class="archive-article-date">
-  	<time datetime="2019-12-23T02:07:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+        <a href="/2020/01/28/Java/Servlet-and-Tomcat/Servlet-and-Tomcat/" class="archive-article-date">
+  	<time datetime="2020-01-28T03:56:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ol>
-<li>概念：是最基础的网页开发语言<a id="more"></a>
-<ul>
-<li>Hyper Text Markup Language 超文本标记语言<ul>
-<li>超文本:<ul>
-<li>超文本是用超链接的方法，将各种不同空间的文字信息组织在一起的网状文本.</li>
-<li>标记语言:<ul>
-<li>由标签构成的语言。&lt;标签名称&gt; 如 html，xml</li>
-<li>标记语言不是编程语言</li>
-</ul>
+        <h2 id="web相关概念回顾"><a href="#web相关概念回顾" class="headerlink" title="web相关概念回顾"></a>web相关概念回顾</h2><h3 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h3><ul>
+<li><p>C/S：客户端/服务器端</p>
+</li>
+<li><p>B/S：浏览器/服务器端</p>
+<a id="more"></a>
+<h3 id="资源分类"><a href="#资源分类" class="headerlink" title="资源分类"></a>资源分类</h3></li>
+<li><p>静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析<br>如： html,css,JavaScript</p>
+</li>
+<li><p>动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，在返回给浏览器<br>如：servlet/jsp,php,asp….</p>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<h3 id="网络通信三要素"><a href="#网络通信三要素" class="headerlink" title="网络通信三要素"></a>网络通信三要素</h3><ol>
+<li>IP：电子设备(计算机)在网络中的唯一标识。</li>
+<li>端口：应用程序在计算机中的唯一标识。 0~65536</li>
+<li>传输协议：规定了数据传输的规则</li>
 </ol>
-<h2 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h2><ul>
-<li><p>语法：</p>
+<p>基础协议：</p>
 <ol>
-<li><p>html文档后缀名 .html 或者 .htm</p>
-<ol start="2">
-<li><p>标签分为</p>
+<li>tcp:安全协议，三次握手。 速度稍慢</li>
+<li>udp：不安全协议。 速度快</li>
+</ol>
+<h2 id="web服务器软件："><a href="#web服务器软件：" class="headerlink" title="web服务器软件："></a>web服务器软件：</h2><ul>
+<li>服务器：安装了服务器软件的计算机</li>
+<li>服务器软件：接收用户的请求，处理请求，做出响应<br>web服务器软件：接收用户的请求，处理请求，做出响应。<br>在web服务器软件中，可以部署web项目，让用户通过浏览器来访问这些项目<br>web容器</li>
+</ul>
+<ul>
+<li><p>常见的java相关的web服务器软件：<br>webLogic：oracle公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。<br>webSphere：IBM公司，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。<br>JBOSS：JBOSS公司的，大型的JavaEE服务器，支持所有的JavaEE规范，收费的。<br>Tomcat：Apache基金组织，中小型的JavaEE服务器，仅仅支持少量的JavaEE规范servlet/jsp。开源的，免费的。</p>
 </li>
-<li><p>围堵标签：有开始标签和结束标签。如 <html> </html></p>
+<li><p>JavaEE：Java语言在企业级开发中使用的技术规范的总和，一共规定了13项大的规范</p>
 </li>
-<li><p>自闭和标签：开始标签和结束标签在一起。如 <br></p>
-<ol start="3">
-<li><p>标签可以嵌套：<br> 需要正确嵌套，不能你中有我，我中有你<br> 错误：<a><b></b></a><br> 正确：<a><b></b></a></p>
-</li>
-<li><p>在开始标签中可以定义属性。属性是由键值对构成，值需要用引号(单双都可)引起来</p>
-</li>
-<li><p>html的标签不区分大小写，但是建议使用小写。</p>
+</ul>
+<h3 id="Tomcat：web服务器软件"><a href="#Tomcat：web服务器软件" class="headerlink" title="Tomcat：web服务器软件"></a>Tomcat：web服务器软件</h3><ol>
+<li>下载：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a></li>
+<li>安装：解压压缩包即可。<br>注意：安装目录建议不要有中文和空格</li>
+<li>卸载：删除目录就行了</li>
+<li>启动：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">* bin/startup.bat ,双击运行该文件即可</span><br><span class="line">			* 访问：浏览器输入：http://localhost:8080 回车访问自己</span><br><span class="line">							  http://别人的ip:8080 访问别人</span><br><span class="line">			</span><br><span class="line">			* 可能遇到的问题：</span><br><span class="line">				1. 黑窗口一闪而过：</span><br><span class="line">					* 原因： 没有正确配置JAVA_HOME环境变量</span><br><span class="line">					* 解决方案：正确配置JAVA_HOME环境变量</span><br><span class="line"></span><br><span class="line">				2. 启动报错：</span><br><span class="line">					1. 暴力：找到占用的端口号，并且找到对应的进程，杀死该进程</span><br><span class="line">						* netstat -ano</span><br><span class="line">					2. 温柔：修改自身的端口号</span><br><span class="line">						* conf/server.xml</span><br><span class="line">						* &lt;Connector port=&quot;8888&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">			               connectionTimeout=&quot;20000&quot;</span><br><span class="line">			               redirectPort=&quot;8445&quot; /&gt;</span><br><span class="line">						* 一般会将tomcat的默认端口号修改为80。80端口号是http协议的默认端口号。</span><br><span class="line">							* 好处：在访问时，就不用输入端口号</span><br></pre></td></tr></table></figure></li>
+<li>关闭：</li>
+</ol>
+<p><strong>正常关闭：</strong><br>bin/shutdown.bat<br>ctrl+c<br><strong>强制关闭：</strong><br>点击启动窗口的×<br>6. 配置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">* 部署项目的方式：</span><br><span class="line">	1. 直接将项目放到webapps目录下即可。</span><br><span class="line">		* /hello：项目的访问路径--&gt;虚拟目录</span><br><span class="line">		* 简化部署：将项目打成一个war包，再将war包放置到webapps目录下。</span><br><span class="line">			* war包会自动解压缩</span><br><span class="line"></span><br><span class="line">	2. 配置conf/server.xml文件</span><br><span class="line">		在&lt;Host&gt;标签体中配置</span><br><span class="line">		&lt;Context docBase=&quot;D:\hello&quot; path=&quot;/hehe&quot; /&gt;</span><br><span class="line">		* docBase:项目存放的路径</span><br><span class="line">		* path：虚拟目录</span><br><span class="line"></span><br><span class="line">	3. 在conf\Catalina\localhost创建任意名称的xml文件。在文件中编写</span><br><span class="line">		&lt;Context docBase=&quot;D:\hello&quot; /&gt;</span><br><span class="line">		* 虚拟目录：xml文件的名称</span><br><span class="line"></span><br><span class="line">* 静态项目和动态项目：</span><br><span class="line">	* 目录结构</span><br><span class="line">		* java动态项目的目录结构：</span><br><span class="line">			-- 项目的根目录</span><br><span class="line">				-- WEB-INF目录：</span><br><span class="line">					-- web.xml：web项目的核心配置文件</span><br><span class="line">					-- classes目录：放置字节码文件的目录</span><br><span class="line">					-- lib目录：放置依赖的jar包</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 将Tomcat集成到IDEA中，并且创建JavaEE的项目，部署项目。</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="Servlet：-server-applet"><a href="#Servlet：-server-applet" class="headerlink" title="Servlet：  server applet"></a>Servlet：  server applet</h2><h3 id="概念：运行在服务器端的小程序"><a href="#概念：运行在服务器端的小程序" class="headerlink" title="概念：运行在服务器端的小程序"></a>概念：运行在服务器端的小程序</h3><p>Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。<br>将来我们自定义一个类，实现Servlet接口，复写方法。</p>
+<h3 id="快速入门："><a href="#快速入门：" class="headerlink" title="快速入门："></a>快速入门：</h3><ol>
+<li>创建JavaEE项目</li>
+<li>定义一个类，实现Servlet接口<br>public class ServletDemo1 implements Servlet</li>
+<li>实现接口中的抽象方法</li>
+<li>配置Servlet<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">在web.xml中配置：</span><br><span class="line">  &lt;!--配置Servlet --&gt;</span><br><span class="line">  &lt;servlet&gt;</span><br><span class="line">      &lt;servlet-name&gt;myp&lt;/servlet-name&gt;</span><br><span class="line">      &lt;servlet-class&gt;com.ndky.ServletDemo&lt;/servlet-class&gt;</span><br><span class="line">  &lt;/servlet&gt;</span><br><span class="line">		</span><br><span class="line">  &lt;servlet-mapping&gt;</span><br><span class="line">      &lt;servlet-name&gt;myp&lt;/servlet-name&gt;</span><br><span class="line">      &lt;url-pattern&gt;/myp&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
+<h3 id="执行原理："><a href="#执行原理：" class="headerlink" title="执行原理："></a>执行原理：</h3><ol>
+<li>当服务器接受到客户端浏览器的请求后，会解析请求URL路径，获取访问的Servlet的资源路径</li>
+<li>查找web.xml文件，是否有对应的&lt; url-pattern &gt;标签体内容。</li>
+<li>如果有，则在找到对应的&lt; servlet-class &gt;全类名</li>
+<li>tomcat会将字节码文件加载进内存，并且创建其对象</li>
+<li>调用其方法</li>
+</ol>
+<h3 id="Servlet中的生命周期方法："><a href="#Servlet中的生命周期方法：" class="headerlink" title="Servlet中的生命周期方法："></a>Servlet中的生命周期方法：</h3><h4 id="被创建：执行init方法，只执行一次"><a href="#被创建：执行init方法，只执行一次" class="headerlink" title="被创建：执行init方法，只执行一次"></a>被创建：执行init方法，只执行一次</h4><ul>
+<li>Servlet什么时候被创建？<br>默认情况下，第一次被访问时，Servlet被创建<br>可以配置执行Servlet的创建时机。<br>在&lt; servlet &gt;标签下配置：</li>
+</ul>
+<ol>
+<li>第一次被访问时，创建<br>&lt; load-on-startup &gt;的值为负数</li>
+<li>在服务器启动时，创建<br>&lt; load-on-startup &gt;的值为0或正整数</li>
+</ol>
+<ul>
+<li>Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，Servlet是单例的<br>多个用户同时访问时，可能存在线程安全问题。<br>解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对修改值</li>
+</ul>
+<h4 id="提供服务：执行service方法，执行多次"><a href="#提供服务：执行service方法，执行多次" class="headerlink" title="提供服务：执行service方法，执行多次"></a>提供服务：执行service方法，执行多次</h4><p>每次访问Servlet时，Service方法都会被调用一次。</p>
+<h4 id="被销毁：执行destroy方法，只执行一次"><a href="#被销毁：执行destroy方法，只执行一次" class="headerlink" title="被销毁：执行destroy方法，只执行一次"></a>被销毁：执行destroy方法，只执行一次</h4><p>Servlet被销毁时执行。服务器关闭时，Servlet被销毁<br>只有服务器正常关闭时，才会执行destroy方法。<br>destroy方法在Servlet被销毁之前执行，一般用于释放资源</p>
+<h3 id="Servlet3-0："><a href="#Servlet3-0：" class="headerlink" title="Servlet3.0："></a>Servlet3.0：</h3><ul>
+<li><p>好处：<br>支持注解配置。可以不需要web.xml了。</p>
+</li>
+<li><p>步骤：</p>
+</li>
+</ul>
+<ol>
+<li>创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml</li>
+<li>定义一个类，实现Servlet接口</li>
+<li>复写方法</li>
+<li>在类上使用@WebServlet注解，进行配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@WebServlet(&quot;资源路径&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Target(&#123;ElementType.TYPE&#125;)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@Documented</span><br><span class="line">public @interface WebServlet &#123;</span><br><span class="line">    String name() default &quot;&quot;;//相当于&lt;Servlet-name&gt;</span><br><span class="line"></span><br><span class="line">    String[] value() default &#123;&#125;;//代表urlPatterns()属性配置</span><br><span class="line"></span><br><span class="line">    String[] urlPatterns() default &#123;&#125;;//相当于&lt;url-pattern&gt;</span><br><span class="line"></span><br><span class="line">    int loadOnStartup() default -1;//相当于&lt;load-on-startup&gt;</span><br><span class="line"></span><br><span class="line">    WebInitParam[] initParams() default &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    boolean asyncSupported() default false;</span><br><span class="line"></span><br><span class="line">    String smallIcon() default &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    String largeIcon() default &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    String description() default &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    String displayName() default &quot;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Servlet的体系结构"><a href="#Servlet的体系结构" class="headerlink" title="Servlet的体系结构"></a>Servlet的体系结构</h3>Servlet – 接口<br> |<br>GenericServlet – 抽象类<br> |<br>HttpServlet  – 抽象类</li>
+</ol>
+<ul>
+<li><p>GenericServlet：将Servlet接口中其他的方法做了默认空实现，只将service()方法作为抽象<br>将来定义Servlet类时，可以继承GenericServlet，实现service()方法即可</p>
+</li>
+<li><p>HttpServlet：对http协议的一种封装，简化操作</p>
+</li>
+</ul>
+<ol>
+<li>定义类继承HttpServlet</li>
+<li>复写doGet/doPost方法</li>
+</ol>
+<h3 id="Servlet相关配置"><a href="#Servlet相关配置" class="headerlink" title="Servlet相关配置"></a>Servlet相关配置</h3><ul>
+<li>urlpartten:Servlet访问路径<br>一个Servlet可以定义多个访问路径 ： @WebServlet({“/d4”,”/dd4”,”/ddd4”})</li>
+<li>路径定义规则：</li>
+</ul>
+<ol>
+<li>/xxx：路径匹配</li>
+<li>/xxx/xxx:多层路径，目录结构</li>
+<li>*.do：扩展名匹配</li>
+</ol>
+<h2 id="IDEA与tomcat的相关配置"><a href="#IDEA与tomcat的相关配置" class="headerlink" title="IDEA与tomcat的相关配置"></a>IDEA与tomcat的相关配置</h2><ol>
+<li><p>IDEA会为每一个tomcat部署的项目单独建立一份配置文件<br>查看控制台的log：Using CATALINA_BASE:   “C:\Users\fqy.IntelliJIdea2018.1\system\tomcat_itcast”</p>
+</li>
+<li><p>工作空间项目    和     tomcat部署的web项目<br>tomcat真正访问的是“tomcat部署的web项目”，”tomcat部署的web项目”对应着”工作空间项目” 的web目录下的所有资源<br>WEB-INF目录下的资源不能被浏览器直接访问。</p>
+</li>
+<li><p>断点调试：使用”小虫子”启动 dubug 启动</p>
 </li>
 </ol>
-</li>
-</ol>
-<ul>
-<li>代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;title&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;FONT color=&apos;red&apos;&gt;Hello World&lt;/font&gt;&lt;br/&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;font color=&apos;green&apos;&gt;Hello World&lt;/font&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">		</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="标签学习："><a href="#标签学习：" class="headerlink" title="标签学习："></a>标签学习：</h2><h3 id="文件标签：构成html最基本的标签"><a href="#文件标签：构成html最基本的标签" class="headerlink" title="文件标签：构成html最基本的标签"></a>文件标签：构成html最基本的标签</h3><ul>
-<li>html:html文档的根标签</li>
-<li>head：头标签。用于指定html文档的一些属性。引入外部的资源</li>
-<li>title：标题标签。</li>
-<li>body：体标签</li>
-<li><!DOCTYPE html>：html5中定义该文档是html文档</li>
-</ul>
-<h3 id="文本标签：和文本有关的标签"><a href="#文本标签：和文本有关的标签" class="headerlink" title="文本标签：和文本有关的标签"></a>文本标签：和文本有关的标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">注释：&lt;!-- 注释内容 --&gt;</span><br><span class="line">	 &lt;h1&gt; to &lt;h6&gt;：标题标签</span><br><span class="line">		* h1~h6:字体大小逐渐递减</span><br><span class="line">	&lt;p&gt;：段落标签</span><br><span class="line">	&lt;br&gt;：换行标签</span><br><span class="line">	&lt;hr&gt;：展示一条水平线</span><br><span class="line">		属性：</span><br><span class="line">			 color：颜色</span><br><span class="line">			 width：宽度</span><br><span class="line">			 size：高度</span><br><span class="line">			 align：对其方式</span><br><span class="line">				 center：居中</span><br><span class="line">				 left：左对齐</span><br><span class="line">				 right：右对齐</span><br><span class="line">	 &lt;b&gt;：字体加粗</span><br><span class="line">	 &lt;i&gt;：字体斜体</span><br><span class="line">	 &lt;font&gt;:字体标签</span><br><span class="line">	 &lt;center&gt;:文本居中</span><br><span class="line">		 属性：</span><br><span class="line">			 color：颜色</span><br><span class="line">			 size：大小</span><br><span class="line">			 face：字体</span><br><span class="line"></span><br><span class="line">属性定义：</span><br><span class="line">		 color：</span><br><span class="line">			1. 英文单词：red,green,blue</span><br><span class="line">			2. rgb(值1，值2，值3)：值的范围：0~255  如  rgb(0,0,255)</span><br><span class="line">			3. #值1值2值3：值的范围：00~FF之间。如： #FF00FF</span><br><span class="line">		 width：</span><br><span class="line">			1. 数值：width=&apos;20&apos; ,数值的单位，默认是 px(像素)</span><br><span class="line">			2. 数值%：占比相对于父元素的比例</span><br><span class="line"></span><br><span class="line">			&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片标签："><a href="#图片标签：" class="headerlink" title="图片标签："></a>图片标签：</h3><p>img：展示图片<br>属性：<br>src：指定图片的位置</p>
-<p> 代码：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--展示一张图片 img--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;img src=&quot;image/jingxuan_2.jpg&quot; align=&quot;right&quot; alt=&quot;古镇&quot; width=&quot;500&quot; height=&quot;500&quot;/&gt;</span><br><span class="line">			</span><br><span class="line">  &lt;!--</span><br><span class="line">      相对路径</span><br><span class="line">          * 以.开头的路径</span><br><span class="line">              * ./：代表当前目录  ./image/1.jpg</span><br><span class="line">              * ../:代表上一级目录</span><br><span class="line">   --&gt;</span><br><span class="line">			</span><br><span class="line">  &lt;img src=&quot;./image/jiangwai_1.jpg&quot;&gt;</span><br><span class="line">			</span><br><span class="line">  &lt;img src=&quot;../image/jiangwai_1.jpg&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="列表标签："><a href="#列表标签：" class="headerlink" title="列表标签："></a>列表标签：</h3><p>有序列表：</p>
-<ul>
-<li>ol:</li>
-<li>li:</li>
-</ul>
-<p>无序列表：</p>
-<ul>
-<li>ul:</li>
-<li>li:</li>
-</ul>
-<h3 id="链接标签："><a href="#链接标签：" class="headerlink" title="链接标签："></a>链接标签：</h3><p> a:定义一个超链接<br>属性：</p>
-<ul>
-<li>href：指定访问资源的URL(统一资源定位符)</li>
-<li>target：指定打开资源的方式</li>
-<li>_self:默认值，在当前页面打开</li>
-<li>_blank：在空白页面打开</li>
-<li>代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--超链接  a--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;a href=&quot;http://www.XXXXX.cn&quot;&gt;点我&lt;/a&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">			</span><br><span class="line">  &lt;a href=&quot;http://www.XXXXX.cn&quot; target=&quot;_self&quot;&gt;点我&lt;/a&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;a href=&quot;http://www.XXXXX.cn&quot; target=&quot;_blank&quot;&gt;点我&lt;/a&gt;</span><br><span class="line">			</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">			</span><br><span class="line">  &lt;a href=&quot;./5_列表标签.html&quot;&gt;列表标签&lt;/a&gt;&lt;br&gt;</span><br><span class="line">  &lt;a href=&quot;mailto:XXXXX@XXXXX.cn&quot;&gt;联系我们&lt;/a&gt;</span><br><span class="line">			</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;a href=&quot;http://www.XXXXX.cn&quot;&gt;&lt;img src=&quot;image/jiangwai_1.jpg&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h3 id="div和span："><a href="#div和span：" class="headerlink" title="div和span："></a>div和span：</h3><ul>
-<li>div:每一个div占满一整行。块级标签</li>
-<li>span：文本信息在一行展示，行内标签 内联标签</li>
-</ul>
-<h3 id="语义化标签：html5中为了提高程序的可读性，提供了一些标签。"><a href="#语义化标签：html5中为了提高程序的可读性，提供了一些标签。" class="headerlink" title="语义化标签：html5中为了提高程序的可读性，提供了一些标签。"></a>语义化标签：html5中为了提高程序的可读性，提供了一些标签。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;header&gt;：页眉</span><br><span class="line">&lt;footer&gt;：页脚</span><br></pre></td></tr></table></figure>
-
-<h3 id="表格标签："><a href="#表格标签：" class="headerlink" title="表格标签："></a>表格标签：</h3><p><strong>table：定义表格</strong></p>
-<ul>
-<li>width：宽度</li>
-<li>border：边框</li>
-<li>cellpadding：定义内容和单元格的距离</li>
-<li>cellspacing：定义单元格之间的距离。如果指定为0，则单元格的线会合为一条、</li>
-<li>bgcolor：背景色</li>
-<li>align：对齐方式</li>
-</ul>
-<p><strong>tr：定义行</strong></p>
-<ul>
-<li>bgcolor：背景色</li>
-<li>align：对齐方式</li>
-</ul>
-<p><strong>td：定义单元格</strong></p>
-<ul>
-<li>colspan：合并列</li>
-<li>rowspan：合并行</li>
-</ul>
-<p><strong>th：定义表头单元格</strong></p>
-<ul>
-<li>caption：表格标题</li>
-<li>thead：表示表格的头部分</li>
-<li>tbody：表示表格的体部分</li>
-<li>tfoot：表示表格的脚部分            </li>
-</ul>
 
       
 
@@ -356,7 +356,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-java</a>
         		</li>
       		
 		</ul>
@@ -412,7 +412,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/23/Java/html/html/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/28/Java/Servlet-and-Tomcat/Servlet-and-Tomcat/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -426,18 +426,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/23/Java/html%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE/html%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/01/30/Java/Servlet-and-Http/Servlet-and-Http/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          html表单标签
+          Http
         
       </div>
     </a>
   
   
-    <a href="/2019/12/22/Java/Junit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E3%80%81%E5%8F%8D%E5%B0%84%E3%80%81%E6%B3%A8%E8%A7%A3/Junit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Junit单元测试/反射/注解</div>
+    <a href="/2020/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%99%9A%E6%8B%9F%E5%A4%B4%E8%8A%82%E7%82%B9%E9%93%BE%E8%A1%A8/%E8%99%9A%E6%8B%9F%E5%A4%B4%E8%8A%82%E7%82%B9%E9%93%BE%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">虚拟头节点链表</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -464,7 +464,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-number">1.</span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速入门："><span class="toc-number">2.</span> <span class="toc-text">快速入门：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签学习："><span class="toc-number">3.</span> <span class="toc-text">标签学习：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文件标签：构成html最基本的标签"><span class="toc-number">3.1.</span> <span class="toc-text">文件标签：构成html最基本的标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本标签：和文本有关的标签"><span class="toc-number">3.2.</span> <span class="toc-text">文本标签：和文本有关的标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片标签："><span class="toc-number">3.3.</span> <span class="toc-text">图片标签：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表标签："><span class="toc-number">3.4.</span> <span class="toc-text">列表标签：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链接标签："><span class="toc-number">3.5.</span> <span class="toc-text">链接标签：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#div和span："><span class="toc-number">3.6.</span> <span class="toc-text">div和span：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语义化标签：html5中为了提高程序的可读性，提供了一些标签。"><span class="toc-number">3.7.</span> <span class="toc-text">语义化标签：html5中为了提高程序的可读性，提供了一些标签。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格标签："><span class="toc-number">3.8.</span> <span class="toc-text">表格标签：</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web相关概念回顾"><span class="toc-number">1.</span> <span class="toc-text">web相关概念回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件架构"><span class="toc-number">1.1.</span> <span class="toc-text">软件架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#资源分类"><span class="toc-number">1.2.</span> <span class="toc-text">资源分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络通信三要素"><span class="toc-number">1.3.</span> <span class="toc-text">网络通信三要素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web服务器软件："><span class="toc-number">2.</span> <span class="toc-text">web服务器软件：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat：web服务器软件"><span class="toc-number">2.1.</span> <span class="toc-text">Tomcat：web服务器软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet：-server-applet"><span class="toc-number">3.</span> <span class="toc-text">Servlet：  server applet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念：运行在服务器端的小程序"><span class="toc-number">3.1.</span> <span class="toc-text">概念：运行在服务器端的小程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速入门："><span class="toc-number">3.2.</span> <span class="toc-text">快速入门：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行原理："><span class="toc-number">3.3.</span> <span class="toc-text">执行原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet中的生命周期方法："><span class="toc-number">3.4.</span> <span class="toc-text">Servlet中的生命周期方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#被创建：执行init方法，只执行一次"><span class="toc-number">3.4.1.</span> <span class="toc-text">被创建：执行init方法，只执行一次</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提供服务：执行service方法，执行多次"><span class="toc-number">3.4.2.</span> <span class="toc-text">提供服务：执行service方法，执行多次</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#被销毁：执行destroy方法，只执行一次"><span class="toc-number">3.4.3.</span> <span class="toc-text">被销毁：执行destroy方法，只执行一次</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet3-0："><span class="toc-number">3.5.</span> <span class="toc-text">Servlet3.0：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet的体系结构"><span class="toc-number">3.6.</span> <span class="toc-text">Servlet的体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet相关配置"><span class="toc-number">3.7.</span> <span class="toc-text">Servlet相关配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA与tomcat的相关配置"><span class="toc-number">4.</span> <span class="toc-text">IDEA与tomcat的相关配置</span></a></li></ol>
                     </div>
                 </span>
             </div>
