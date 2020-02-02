@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 马云鹏</title>
+  <title>request | 马云鹏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="马云鹏">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="Request：request对象和response对象的原理 request和response对象是由服务器创建的。我们来使用它们 request对象是来获取请求消息，response对象是来设置响应消息">
+<meta name="keywords" content="-java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="request">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;Java&#x2F;request&#x2F;request&#x2F;index.html">
 <meta property="og:site_name" content="马云鹏">
+<meta property="og:description" content="Request：request对象和response对象的原理 request和response对象是由服务器创建的。我们来使用它们 request对象是来获取请求消息，response对象是来设置响应消息">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-02T04:44:13.708Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="马云鹏" type="application/atom+xml">
@@ -166,215 +170,301 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java/request/request" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      request
+    </h1>
+  
+ 
+         <!--显示阅读次数-->
+
+  <br/>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#696969;font-size:14px;">
+            ☺阅读次数 : <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+  
+        
+        <a href="/2020/02/02/Java/request/request/" class="archive-article-date">
+  	<time datetime="2020-02-02T04:24:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Request："><a href="#Request：" class="headerlink" title="Request："></a>Request：</h2><h3 id="request对象和response对象的原理"><a href="#request对象和response对象的原理" class="headerlink" title="request对象和response对象的原理"></a>request对象和response对象的原理</h3><ol>
+<li>request和response对象是由服务器创建的。我们来使用它们</li>
+<li>request对象是来获取请求消息，response对象是来设置响应消息<a id="more"></a>
+<h3 id="request对象继承体系结构："><a href="#request对象继承体系结构：" class="headerlink" title="request对象继承体系结构："></a>request对象继承体系结构：</h3>ServletRequest        –    接口<br> |    继承<br>HttpServletRequest    – 接口<br> |    实现<br>org.apache.catalina.connector.RequestFacade 类(tomcat创建)</li>
+</ol>
+<h3 id="request功能："><a href="#request功能：" class="headerlink" title="request功能："></a>request功能：</h3><p>获取请求消息数据</p>
+<h4 id="获取请求行数据"><a href="#获取请求行数据" class="headerlink" title="获取请求行数据"></a>获取请求行数据</h4><p>GET /day14/demo1?name=zhangsan HTTP/1.1(请求行)</p>
+<ul>
+<li>方法：</li>
+</ul>
+<ol>
+<li><p>获取请求方式 ：GET<br>String getMethod()  </p>
+</li>
+<li><p><strong>获取虚拟目录：/day14</strong><br>String getContextPath()</p>
+</li>
+<li><p>获取Servlet路径: /demo1<br>String getServletPath()</p>
+</li>
+<li><p>获取get方式请求参数：name=zhangsan<br>String getQueryString()</p>
+</li>
+<li><p><strong>获取请求URI：/day14/demo1</strong><br>String getRequestURI():        /day14/demo1<br>StringBuffer getRequestURL()  :<a href="http://localhost/day14/demo1" target="_blank" rel="noopener">http://localhost/day14/demo1</a><br>URL:统一资源定位符 ： <a href="http://localhost/day14/demo1" target="_blank" rel="noopener">http://localhost/day14/demo1</a>    中华人民共和国<br>URI：统一资源标识符 : /day14/demo1                    共和国</p>
+</li>
+<li><p>获取协议及版本：HTTP/1.1<br>String getProtocol()</p>
+</li>
+<li><p>获取客户机的IP地址：<br>String getRemoteAddr()</p>
+</li>
+</ol>
+<h4 id="获取请求头数据"><a href="#获取请求头数据" class="headerlink" title="获取请求头数据"></a>获取请求头数据</h4><p><strong>String getHeader(String name):通过请求头的名称获取请求头的值</strong><br>Enumeration<String> getHeaderNames():获取所有的请求头名称</String></p>
+<h4 id="获取请求体数据"><a href="#获取请求体数据" class="headerlink" title="获取请求体数据:"></a>获取请求体数据:</h4><ul>
+<li>请求体：只有POST请求方式，才有请求体，在请求体中封装了POST请求的请求参数<br>步骤：</li>
+</ul>
+<ol>
+<li>获取流对象<br>BufferedReader getReader()：获取字符输入流，只能操作字符数据<br>ServletInputStream getInputStream()：获取字节输入流，可以操作所有类型数据</li>
+<li>再从流对象中拿数据</li>
+</ol>
+<h3 id="其他功能："><a href="#其他功能：" class="headerlink" title="其他功能："></a>其他功能：</h3><ul>
+<li>获取请求参数通用方式：不论get还是post请求方式都可以使用下列方法来获取请求参数</li>
+</ul>
+<ol>
+<li>String getParameter(String name):根据参数名称获取参数值    username=zs&amp;password=123</li>
+<li>String[] getParameterValues(String name):根据参数名称获取参数值的数组  hobby=xx&amp;hobby=game</li>
+<li>Enumeration&lt; String &gt; getParameterNames():获取所有请求的参数名称</li>
+<li>Map&lt; String,String[] &gt; getParameterMap():获取所有参数的map集合</li>
+</ol>
+<hr>
+<ul>
+<li>中文乱码问题：<br>get方式：tomcat 8 已经将get方式乱码问题解决了<br>post方式：会乱码</li>
+<li>解决：在获取参数前，设置request的编码request.setCharacterEncoding(“utf-8”);</li>
+</ul>
+<hr>
+<ul>
+<li>请求转发：一种在服务器内部的资源跳转方式<br>步骤：</li>
+</ul>
+<ol>
+<li>通过request对象获取请求转发器对象：RequestDispatcher getRequestDispatcher(String path)</li>
+<li>使用RequestDispatcher对象来进行转发：forward(ServletRequest request, ServletResponse response)<br>特点：</li>
+<li>浏览器地址栏路径不发生变化</li>
+<li>只能转发到当前服务器内部资源中。</li>
+<li>转发是一次请求</li>
+</ol>
+<hr>
+<ul>
+<li>共享数据：<br>域对象：一个有作用范围的对象，可以在范围内共享数据<br>request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据<br>方法：</li>
+</ul>
+<ol>
+<li>void setAttribute(String name,Object obj):存储数据</li>
+<li>Object getAttitude(String name):通过键获取值</li>
+<li>void removeAttribute(String name):通过键移除键值对</li>
+</ol>
+<hr>
+<ul>
+<li>获取ServletContext：<br>ServletContext getServletContext()</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/%E9%98%9F%E5%88%97/" class="archive-article-date">
-  	<time datetime="2020-01-08T08:26:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/%E9%98%9F%E5%88%97/">队列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/02/Java/request/request/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/%E6%A0%88/" class="archive-article-date">
-  	<time datetime="2020-01-08T08:19:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/30/Java/Servlet-and-Http/Servlet-and-Http/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Http</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/%E6%A0%88/">栈</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Request："><span class="toc-number">1.</span> <span class="toc-text">Request：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#request对象和response对象的原理"><span class="toc-number">1.1.</span> <span class="toc-text">request对象和response对象的原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#request对象继承体系结构："><span class="toc-number">1.2.</span> <span class="toc-text">request对象继承体系结构：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#request功能："><span class="toc-number">1.3.</span> <span class="toc-text">request功能：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取请求行数据"><span class="toc-number">1.3.1.</span> <span class="toc-text">获取请求行数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取请求头数据"><span class="toc-number">1.3.2.</span> <span class="toc-text">获取请求头数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取请求体数据"><span class="toc-number">1.3.3.</span> <span class="toc-text">获取请求体数据:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他功能："><span class="toc-number">1.4.</span> <span class="toc-text">其他功能：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+ 
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/07/%E6%80%9D%E8%80%83/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-01-07T12:12:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-07</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/07/%E6%80%9D%E8%80%83/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/">数据类型转换问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-思考</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2020-01-07T12:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/">动态数组</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/07/%E6%80%9D%E8%80%83/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E4%BA%A7%E7%94%9F%E7%9A%84%E7%B4%A2%E5%BC%95%E8%B6%8A%E7%95%8C%E9%97%AE%E9%A2%98/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E4%BA%A7%E7%94%9F%E7%9A%84%E7%B4%A2%E5%BC%95%E8%B6%8A%E7%95%8C%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-01-07T10:48:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/07/%E6%80%9D%E8%80%83/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E4%BA%A7%E7%94%9F%E7%9A%84%E7%B4%A2%E5%BC%95%E8%B6%8A%E7%95%8C%E9%97%AE%E9%A2%98/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E4%BA%A7%E7%94%9F%E7%9A%84%E7%B4%A2%E5%BC%95%E8%B6%8A%E7%95%8C%E9%97%AE%E9%A2%98/">数组遍历产生的索引越界问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-思考</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
+
+
+
+<!--插入评论-->
+
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "Oqd6gc9UVGAvaHeC1BB6wYwK-gzGzoHsz",
+            app_key: "REMSirCGqs7WW1YbYE8hNMUV",
+            placeholder: "Just go go",
+            avatar:"mm"
+        });
+    }
+</script>
+    </section>
   
 
 
@@ -402,8 +492,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
